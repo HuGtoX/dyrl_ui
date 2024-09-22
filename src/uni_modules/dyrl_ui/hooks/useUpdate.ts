@@ -1,4 +1,4 @@
-import { onMounted } from "vue";
+import { onMounted,onUnmounted } from "vue";
 
 const useUpdate = (
   key: string,
