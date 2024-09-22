@@ -37,7 +37,6 @@ async function GenerateComponents(appContext) {
         const mod = await modules[path]();
         registerComponent(appContext, component_name, mod);
       } catch (err) {
-        console.log("-- [ registerComponent err ] --", err);
       }
     }
   } catch (error) {

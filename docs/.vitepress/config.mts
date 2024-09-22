@@ -1,8 +1,8 @@
 import { defineConfig } from "vitepress";
-// import {
-//   demoblockPlugin,
-//   demoblockVitePlugin,
-// } from "vitepress-theme-demoblock";
+import {
+  demoblockPlugin,
+  demoblockVitePlugin,
+} from "vitepress-theme-demoblock";
 import AutoImport from "unplugin-auto-import/vite";
 import themeConfig from "./themeConfig";
 import path from "path";
@@ -13,9 +13,10 @@ export default defineConfig({
   title: "@dyrl/mobile",
   description: "A Company UI Package ",
   lang: "zh-CN",
+  base:"/dyrl_ui/",
   vite: {
     plugins: [
-      // demoblockVitePlugin(),
+      demoblockVitePlugin(),
       AutoImport({
         include: [
           /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
@@ -34,11 +35,11 @@ export default defineConfig({
     },
   },
   markdown: {
-    // config: (md) => {
-    //   md.use(demoblockPlugin, {
-    //     customClass: "demoblock-custom",
-    //   });
-    // },
+    config: (md) => {
+      md.use(demoblockPlugin, {
+        customClass: "demoblock-custom",
+      });
+    },
   },
   themeConfig: themeConfig,
 });
