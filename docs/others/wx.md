@@ -39,8 +39,8 @@ async function getAgentConfigSignature(url) {
   };
 }
 ww.register({
-  corpId: "ww31088e6f9f03ec24", // 必填，当前用户企业所属企业ID
-  agentId: 1000037, // 必填，当前应用的AgentID
+  corpId: "xxxxxxxx", // 必填，当前用户企业所属企业ID
+  agentId: xxxxxx, // 必填，当前应用的AgentID
   jsApiList: [], // 必填，需要使用的JSAPI列表
   getConfigSignature, // 必填，根据url生成企业签名的回调函数
   getAgentConfigSignature, // 必填，根据url生成应用签名的回调函数
