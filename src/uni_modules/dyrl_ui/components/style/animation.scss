@@ -1,0 +1,23 @@
+@keyframes rl-slide-up-enter {
+  from {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes rl-slide-up-leave {
+  to {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes rl-slide-down-enter {
+  from {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+@keyframes rl-slide-down-leave {
+  to {
+    transform: translate3d(0, -100%, 0);
+  }
+}

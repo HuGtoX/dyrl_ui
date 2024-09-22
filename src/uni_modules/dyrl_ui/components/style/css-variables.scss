@@ -1,0 +1,94 @@
+page {
+  // Color Palette
+  --rl-main-text-color: #2f343a;
+  --rl-placeholder-color: #5c6269;
+  --rl-black: #000;
+  --rl-white: #fff;
+  --rl-gray-1: #f7f8fa;
+  --rl-gray-2: #f2f3f5;
+  --rl-gray-3: #ebedf0;
+  --rl-gray-4: #dcdee0;
+  --rl-gray-5: #c8c9cc;
+  --rl-gray-6: #969799;
+  --rl-gray-7: #646566;
+  --rl-gray-8: #323233;
+  --rl-red: #ee0a24;
+  --rl-blue: #0173fc;
+  --rl-orange: #ff976a;
+  --rl-orange-dark: #ed6a0c;
+  --rl-orange-light: #fffbe8;
+  --rl-green: #06dd9f;
+
+  --rl-disabled-text-color: #c8c9cc;
+  --rl-read-only-color: #2f343a;
+
+  // Gradient Colors
+  --rl-gradient-red: linear-gradient(to right, #ff6034, #ee0a24);
+  --rl-gradient-orange: linear-gradient(to right, #ffd01e, #ff8917);
+
+  // Component Colors
+  --rl-primary-color: var(--rl-blue);
+  --rl-success-color: var(--rl-green);
+  --rl-danger-color: var(--rl-red);
+  --rl-warning-color: var(--rl-orange);
+  --rl-text-color: var(--rl-gray-8);
+  --rl-text-color-2: var(--rl-gray-6);
+  --rl-text-color-3: var(--rl-gray-5);
+  --rl-active-color: var(--rl-gray-2);
+  --rl-active-opacity: 0.6;
+  --rl-disabled-opacity: 0.5;
+  --rl-background: var(--rl-gray-1);
+  --rl-background-2: var(--rl-white);
+  --rl-background-3: var(--rl-white);
+
+  // Padding
+  --rl-padding-base: 4px;
+  --rl-padding-xs: 8px;
+  --rl-padding-sm: 12px;
+  --rl-padding-md: 16px;
+  --rl-padding-lg: 24px;
+  --rl-padding-xl: 32px;
+
+  // Font
+  --rl-font-bold: 600;
+  --rl-font-size-xs: 10px;
+  --rl-font-size-sm: 12px;
+  --rl-font-size-md: 14px;
+  --rl-font-size-lg: 16px;
+  --rl-line-height-xs: 14px;
+  --rl-line-height-sm: 18px;
+  --rl-line-height-md: 20px;
+  --rl-line-height-lg: 22px;
+  /* stylelint-disable */
+  --rl-base-font: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica,
+    Segoe UI, Arial, Roboto, "PingFang SC", "miui", "Hiragino Sans GB",
+    "Microsoft Yahei", sans-serif;
+  --rl-price-font: avenir-heavy, "PingFang SC", helvetica neue, arial,
+    sans-serif;
+  /* stylelint-enable */
+
+  // Animation
+  --rl-duration-base: 0.3s;
+  --rl-duration-fast: 0.2s;
+  --rl-ease-out: ease-out;
+  --rl-ease-in: ease-in;
+
+  // Border
+  --rl-border-color: var(--rl-gray-3);
+  --rl-border-width: 1px;
+  --rl-radius-sm: 2px;
+  --rl-radius-md: 4px;
+  --rl-radius-lg: 8px;
+  --rl-radius-max: 999px;
+}
+
+.rl-theme-dark {
+  --rl-text-color: #f5f5f5;
+  --rl-text-color-2: #707070;
+  --rl-text-color-3: #4d4d4d;
+  --rl-border-color: #3a3a3c;
+  --rl-active-color: #3a3a3c;
+  --rl-background: #000;
+  --rl-background-2: #1c1c1e;
+  --rl-background-3: #37363b;
+}

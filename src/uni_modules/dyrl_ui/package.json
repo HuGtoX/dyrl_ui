@@ -1,0 +1,19 @@
+{
+  "id": "gh-dyrl_ui",
+  "displayName": "dyrl_ui",
+  "name": "@dyrl/mobile",
+  "version": "1.0.0",
+  "description": "uniapp-组件库",
+  "uni_modules": {
+    "dependencies": [
+      {
+        "lodash-es": "^4.17.21"
+      }
+    ]
+  },
+  "engines": {
+    "HBuilderX": "^3.1.0"
+  },
+  "author": "",
+  "license": "ISC"
+}

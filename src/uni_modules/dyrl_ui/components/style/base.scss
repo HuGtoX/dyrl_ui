@@ -1,0 +1,81 @@
+@import "./mixins/hairline.scss";
+
+// 超出行数，自动显示行尾省略号，最多5行
+@for $i from 1 through 5 {
+  .text-line-#{$i} {
+    // vue下，单行和多行显示省略号需要单独处理
+    @if $i == "1" {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    } @else {
+      display: -webkit-box !important;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-break: break-all;
+      -webkit-line-clamp: $i;
+      -webkit-box-orient: vertical !important;
+    }
+  }
+}
+
+.rl-safe-area-top {
+  padding-top: var(--window-top);
+}
+
+.rl-safe-area-bottom {
+  padding-bottom: var(--window-bottom);
+}
+
+[class*="rl-hairline"] {
+  &::after {
+    @include hairline();
+  }
+}
+
+.rl-hairline {
+  &,
+  &--top,
+  &--left,
+  &--right,
+  &--bottom,
+  &--surround,
+  &--top-bottom {
+    position: relative;
+  }
+
+  &--top::after {
+    border-top-width: var(--rl-border-width);
+  }
+
+  &--left::after {
+    border-left-width: var(--rl-border-width);
+  }
+
+  &--right::after {
+    border-right-width: var(--rl-border-width);
+  }
+
+  &--bottom::after {
+    border-bottom-width: var(--rl-border-width);
+  }
+
+  &,
+  &-unset {
+    &--top-bottom::after {
+      border-width: var(--rl-border-width) 0;
+    }
+  }
+
+  &--surround::after {
+    border-width: var(--rl-border-width);
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+  width: 0 !important;
+  height: 0 !important;
+  -webkit-appearance: none;
+  background: transparent;
+}

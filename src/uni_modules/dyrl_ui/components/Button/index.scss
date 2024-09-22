@@ -1,0 +1,284 @@
+.rl-button {
+  --rl-button-mini-height: 24px;
+  --rl-button-mini-padding: 0 var(--rl-padding-base);
+  --rl-button-mini-font-size: var(--rl-font-size-xs);
+  --rl-button-small-height: 32px;
+  --rl-button-small-padding: 0 var(--rl-padding-xs);
+  --rl-button-small-font-size: var(--rl-font-size-sm);
+  --rl-button-normal-padding: 0 15px;
+  --rl-button-normal-font-size: var(--rl-font-size-md);
+  --rl-button-large-padding: 0 17px;
+  --rl-button-large-height: 50px;
+  --rl-button-default-height: 44px;
+  --rl-button-default-line-height: 1.2;
+  --rl-button-default-font-size: var(--rl-font-size-lg);
+  --rl-button-default-color: var(--rl-text-color);
+  --rl-button-default-background: var(--rl-background-2);
+  --rl-button-default-border-color: var(--rl-gray-4);
+  --rl-button-primary-color: var(--rl-white);
+  --rl-button-primary-background: var(--rl-primary-color);
+  --rl-button-primary-plain-background: rgba(1, 115, 252, 0.15);
+  --rl-button-primary-border-color: var(--rl-primary-color);
+  --rl-button-success-color: var(--rl-white);
+  --rl-button-success-background: var(--rl-success-color);
+  --rl-button-success-border-color: var(--rl-success-color);
+  --rl-button-danger-color: var(--rl-white);
+  --rl-button-danger-background: var(--rl-danger-color);
+  --rl-button-danger-border-color: var(--rl-danger-color);
+  --rl-button-warning-color: var(--rl-white);
+  --rl-button-warning-background: var(--rl-warning-color);
+  --rl-button-warning-border-color: var(--rl-warning-color);
+  --rl-button-border-width: var(--rl-border-width);
+  --rl-button-radius: var(--rl-radius-lg);
+  --rl-button-round-radius: var(--rl-radius-max);
+  --rl-button-plain-background: var(--rl-white);
+  --rl-button-disabled-opacity: var(--rl-disabled-opacity);
+  --rl-button-icon-size: 1.2em;
+  --rl-button-loading-icon-size: 20px;
+
+  --rl-button-link-color: var(--rl-primary-color);
+  --rl-button-link-active-color: var(--rl-gray-7);
+}
+
+.rl-theme-dark {
+  --rl-button-plain-background: transparent;
+}
+
+.rl-button {
+  cursor: pointer;
+  position: relative;
+  display: inline-flex;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--rl-button-default-font-size);
+  border-radius: var(--rl-button-radius);
+  margin: 0;
+  padding: 0;
+  height: var(--rl-button-default-height);
+  transition: opacity var(--rl-duration-fast);
+  -webkit-font-smoothing: auto;
+
+  &::after {
+    border-width: 0;
+    content: " ";
+  }
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: var(--rl-black);
+    border: inherit;
+    border-color: var(--rl-black);
+    border-radius: inherit; /* inherit parent's border radius */
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    content: " ";
+  }
+
+  &:active::before {
+    opacity: 0.1;
+  }
+
+  &--loading,
+  &--disabled {
+    &::before {
+      display: none;
+    }
+  }
+  &--disabled {
+    cursor: not-allowed;
+    opacity: var(--rl-button-disabled-opacity);
+
+    &.rl-button--link,
+    &.rl-button--link:active {
+      color: var(--rl-button-link-active-color);
+    }
+  }
+
+  &--loading {
+    cursor: default;
+  }
+
+  &--default {
+    color: var(--rl-button-default-color);
+    background: var(--rl-button-default-background);
+    border: var(--rl-button-border-width) solid
+      var(--rl-button-default-border-color);
+  }
+
+  &--primary {
+    color: var(--rl-button-primary-color);
+    background: var(--rl-button-primary-background);
+    border: var(--rl-button-border-width) solid
+      var(--rl-button-primary-border-color);
+  }
+
+  &--success {
+    color: var(--rl-button-success-color);
+    background: var(--rl-button-success-background);
+    border: var(--rl-button-border-width) solid
+      var(--rl-button-success-border-color);
+  }
+
+  &--danger {
+    color: var(--rl-button-danger-color);
+    background: var(--rl-button-danger-background);
+    border: var(--rl-button-border-width) solid
+      var(--rl-button-danger-border-color);
+  }
+
+  &--warning {
+    color: var(--rl-button-warning-color);
+    background: var(--rl-button-warning-background);
+    border: var(--rl-button-border-width) solid
+      var(--rl-button-warning-border-color);
+  }
+
+  &--text {
+    color: var(--rl-button-default-color);
+    background: transparent !important;
+    --rl-button-border-width: 0;
+  }
+
+  &--link {
+    color: var(--rl-button-link-color);
+    background: transparent !important;
+    --rl-button-border-width: 0;
+    &::before {
+      display: none;
+    }
+    &:active {
+      color: var(--rl-button-link-active-color);
+    }
+  }
+
+  &--plain {
+    background: transparent;
+
+    &.rl-button--primary {
+      color: var(--rl-button-primary-background);
+    }
+
+    &.rl-button--success {
+      color: var(--rl-button-success-background);
+    }
+
+    &.rl-button--danger {
+      color: var(--rl-button-danger-background);
+    }
+
+    &.rl-button--warning {
+      color: var(--rl-button-warning-background);
+    }
+  }
+
+  &--large {
+    padding: var(--rl-button-large-padding);
+    height: var(--rl-button-large-height);
+  }
+
+  &--normal {
+    padding: var(--rl-button-normal-padding);
+    font-size: var(--rl-button-normal-font-size);
+  }
+
+  &--small {
+    height: var(--rl-button-small-height);
+    padding: var(--rl-button-small-padding);
+    font-size: var(--rl-button-small-font-size);
+  }
+
+  &--mini {
+    height: var(--rl-button-mini-height);
+    padding: var(--rl-button-mini-padding);
+    font-size: var(--rl-button-mini-font-size);
+
+    & + .rl-button--mini {
+      margin-left: var(--rl-padding-base);
+    }
+  }
+
+  &__icon {
+    margin-right: 10px;
+  }
+
+  &__loading {
+    color: inherit;
+    font-size: inherit;
+
+    &__text {
+      margin-left: 5px;
+    }
+
+    .rl-loading__spinner {
+      color: currentColor;
+      width: var(--rl-button-loading-icon-size);
+      height: var(--rl-button-loading-icon-size);
+    }
+  }
+
+  &--block {
+    display: flex;
+    width: 100%;
+  }
+
+  &--round {
+    border-radius: var(--rl-button-round-radius);
+  }
+
+  &--square {
+    border-radius: var(--rl-button-radius);
+  }
+
+  // align-items are ignored when flex container is a button in legacy safari
+  // see: https://bugs.webkit.org/show_bug.cgi?id=169700
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    // fix icon vertical align
+    // see: https://github.com/rlt-ui/rlt/issues/7617
+    &::before {
+      content: " ";
+    }
+  }
+
+  &__icon {
+    font-size: var(--rl-button-icon-size);
+    line-height: inherit;
+  }
+
+  &__icon + &__text,
+  &__loading + &__text,
+  &__text + &__icon,
+  &__text + &__loading {
+    margin-left: var(--rl-padding-base);
+  }
+
+  &--hairline {
+    border-width: 0;
+
+    &::after {
+      // 重置uni初始化样式
+      display: block !important;
+      transform-origin: initial !important;
+      border-color: inherit;
+      border-radius: calc(var(--rl-button-radius) * 2);
+    }
+
+    &.rl-button--round::after {
+      border-width: 1px;
+      border-radius: var(--rl-button-round-radius);
+    }
+
+    &.rl-button--square::after {
+      border-radius: 0;
+    }
+  }
+}

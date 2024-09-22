@@ -1,0 +1,97 @@
+.rl-loading {
+  --rl-loading-text-color: var(--rl-text-color-2);
+  --rl-loading-text-font-size: var(--rl-font-size-md);
+  --rl-loading-spinner-color: var(--rl-gray-6);
+  --rl-loading-spinner-size: 16px;
+  --rl-loading-spinner-duration: 0.8s;
+}
+
+@keyframes rl-rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.rl-loading {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  color: var(--rl-loading-spinner-color);
+  // font-size: 0;
+
+  &__circular {
+    display: inline-flex;
+    align-items: center;
+    font-size: var(--rl-loading-spinner-size);
+  }
+
+  &__spinner {
+    position: relative;
+    display: inline-flex;
+    width: var(--rl-loading-spinner-size);
+    // compatible for 1.x, users may set width or height in root element
+    max-width: 100%;
+    height: var(--rl-loading-spinner-size);
+    max-height: 100%;
+    vertical-align: middle;
+    animation: rl-rotate var(--rl-loading-spinner-duration) linear infinite;
+
+    &--spinner {
+      animation-timing-function: steps(12);
+    }
+  }
+
+  &__line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    &::before {
+      display: block;
+      width: 2px;
+      height: 25%;
+      margin: 0 auto;
+      background-color: currentColor;
+      border-radius: 40%;
+      content: " ";
+    }
+  }
+
+  &__text {
+    display: inline-block;
+    margin-left: var(--rl-padding-xs);
+    color: var(--rl-loading-text-color);
+    font-size: var(--rl-loading-text-font-size);
+    vertical-align: middle;
+  }
+
+  &--vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .rl-loading__text {
+      margin: var(--rl-padding-xs) 0 0;
+    }
+  }
+}
+
+@mixin generate-spinner($n, $i: 1) {
+  @if $i <= $n {
+    .rl-loading__line--#{$i} {
+      transform: rotate($i * 30deg);
+      opacity: 1 - calc(0.75 / 12) * ($i - 1);
+    }
+
+    @include generate-spinner($n, ($i + 1));
+  }
+}
+@include generate-spinner(12);
