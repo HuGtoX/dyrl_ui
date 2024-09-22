@@ -1,12 +1,10 @@
 <script setup lang="ts">
 import { useData } from "vitepress";
 import DefaultTheme from "vitepress/theme";
-import { getCurrentInstance, nextTick, provide } from "vue";
+import { nextTick, provide } from "vue";
 import Footer from "./Footer.vue";
 
 const { isDark } = useData();
-
-const instance = getCurrentInstance();
 
 const enableTransitions = () =>
   "startViewTransition" in document &&
