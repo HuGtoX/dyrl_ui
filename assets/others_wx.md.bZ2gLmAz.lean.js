@@ -1,0 +1,1 @@
+import{_ as s,c as i,o as a,ad as n}from"./chunks/framework.CTHohdEj.js";const F=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"others/wx.md","filePath":"others/wx.md"}'),h={name:"others/wx.md"},k=n("",7),p=[k];function l(t,e,r,E,d,g){return a(),i("div",null,p)}const c=s(h,[["render",l]]);export{F as __pageData,c as default};
