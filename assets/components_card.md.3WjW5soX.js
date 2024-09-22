@@ -1,1 +1,0 @@
-import{_ as e,c as t,o as a}from"./chunks/framework.CTHohdEj.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"components/card.md","filePath":"components/card.md"}'),o={name:"components/card.md"};function c(r,n,s,d,p,m){return a(),t("div")}const f=e(o,[["render",c]]);export{i as __pageData,f as default};

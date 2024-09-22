@@ -1,0 +1,1 @@
+import{d as s,o,c as n,n as t,_ as c}from"./framework.DZLrHpBd.js";const r=s({__name:"index",props:{position:{}},setup(e){const a=e;return(p,i)=>(o(),n("view",{class:t(["safe-area",`safe-area-position-${a.position}`])},null,2))}}),l=c(r,[["__scopeId","data-v-4ee176c5"]]);export{l as default};

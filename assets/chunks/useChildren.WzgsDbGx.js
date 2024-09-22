@@ -1,1 +1,0 @@
-import{as as s,Y as t}from"./framework.CTHohdEj.js";function a(l){const i=s([]),e=s([]);return{children:i,linkChildren:o=>{t(l,Object.assign({link:n=>{n.proxy&&(e.push(n),i.push(n.proxy))},unlink:n=>{const r=e.indexOf(n);i.splice(r,1),e.splice(r,1)},children:i,internalChildren:e},o))}}}export{a as u};

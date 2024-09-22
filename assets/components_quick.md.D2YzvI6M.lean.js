@@ -1,0 +1,1 @@
+import{_ as e,c as t,o}from"./chunks/framework.DZLrHpBd.js";const d=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"components/quick.md","filePath":"components/quick.md"}'),c={name:"components/quick.md"};function n(a,s,r,i,p,m){return o(),t("div")}const f=e(c,[["render",n]]);export{d as __pageData,f as default};
