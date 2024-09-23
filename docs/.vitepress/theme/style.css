@@ -129,13 +129,6 @@
   --vp-custom-block-tip-code-bg: var(--vp-c-brand-soft);
 }
 
-:root .VPSidebar {
-  /* padding: 0;
-  padding-left: 32px;
-  padding-top: var(--vp-nav-height);
-  width: var(--vp-sidebar-width); */
-}
-
 /**
  * Component: Algolia
  * -------------------------------------------------------------------------- */
