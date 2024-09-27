@@ -27,13 +27,19 @@ export default {
 </script>
 <script setup lang="ts">
 import { ref, computed } from "vue";
-// Utils
 import { createNamespace, isPromise } from "../utils";
 import Icon from "../Icon/index.vue";
 
 const [_, bem] = createNamespace("button");
 type ButtonProps = {
-  type?: "danger" | "primary" | "default" | "text" | "link" | "warning" | "success";
+  type?:
+    | "danger"
+    | "primary"
+    | "default"
+    | "text"
+    | "link"
+    | "warning"
+    | "success";
   size?: "mini" | "small" | "normal" | "large";
   block?: boolean;
   loading?: "auto" | boolean;

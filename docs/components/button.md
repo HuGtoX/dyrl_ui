@@ -1,9 +1,6 @@
-<script setup>
-</script>
+<Frame />
 
 ## 基础用法
-
-:::demo
 
 ```vue
 <template>
@@ -41,11 +38,7 @@
 </template>
 ```
 
-:::
-
 ## 加载状态
-
-:::demo
 
 ```vue
 <script setup>
@@ -65,8 +58,6 @@ const handleClick = async () => {
   </Space>
 </template>
 ```
-
-:::
 
 ## Attributes
 

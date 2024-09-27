@@ -5,12 +5,11 @@ import DefaultTheme from "vitepress/theme";
 import { useData } from "vitepress";
 import { useComponents } from "./useComponents";
 import "./style.css";
-import "./css-variables.scss";
-import "./iconfont.css";
+import "./overrides.scss";
 import "vitepress-theme-demoblock/dist/theme/styles/index.css";
-import GenerateComponents from "../../utils/GenerateComponents";
 import Layout from "./components/Layout.vue";
 import NavLinks from "./components/NavLinks.vue";
+import Frame from "./components/Frame.vue";
 
 export default {
   extends: DefaultTheme,
@@ -27,7 +26,7 @@ export default {
   enhanceApp(ctx) {
     DefaultTheme.enhanceApp(ctx);
     ctx.app.component("MNavLinks", NavLinks);
+    ctx.app.component("Frame", Frame);
     useComponents(ctx.app);
-    GenerateComponents(ctx.app);
   },
 } satisfies Theme;

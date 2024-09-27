@@ -58,7 +58,7 @@ const props = withDefaults(defineProps<ImageProps>(), {
 });
 
 const loading = ref(true);
-const loadHandle = (load) => {
+const loadHandle = (load: boolean) => {
   if (load) loading.value = false;
 };
 
@@ -123,7 +123,7 @@ export default {
 .rl-image {
   flex-shrink: 0;
   position: relative;
-  display: inline-flex;
+  display: block;
   overflow: hidden;
 
   &--round {
@@ -158,6 +158,7 @@ export default {
     display: block;
     width: 100%;
     height: 100%;
+    overflow: hidden;
   }
 
   &--block {

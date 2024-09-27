@@ -75,23 +75,10 @@
 
 <script setup lang="ts">
 import { addUnit, createNamespace } from "../utils";
-import { computed } from "vue";
+import { computed, type CSSProperties } from "vue";
 import Avatar from "../Avatar/index.vue";
 import Button from "../Button/index.vue";
 import Icon from "../Icon/index.vue";
-
-/**
- * Card 卡片
- * @description 卡片视图组件
- * @property {String} title 标题文字
- * @property {String} subTitle 副标题
- * @property {Number} padding 内容内边距
- * @property {Number} margin 卡片外边距
- * @property {Number} spacing 卡片内边距
- * @property {String} extra 标题额外信息
- * @property {String} thumbnail 标题左侧缩略图
- * @property {Boolean} is-full = [true | false] 卡片内容是否通栏，为 true 时将去除padding值
- */
 
 type Numeric = string | number;
 type CardProps = {
@@ -124,7 +111,7 @@ const props = withDefaults(defineProps<CardProps>(), {
 });
 
 const cardStyle = computed(() => {
-  const style = {};
+  const style: CSSProperties = {};
   if (props.bgColor) {
     style["background"] = props.bgColor;
   }
@@ -145,7 +132,7 @@ export default {
   },
 };
 
-const navigateTo = (url) => {
+const navigateTo = (url: string) => {
   uni.navigateTo({ url });
 };
 </script>
@@ -159,6 +146,7 @@ const navigateTo = (url) => {
   --rl-card-border-color: rgba(0, 0, 0, 0.1);
   --rl-card-border-radius: 10px;
   --rl-card-avatar-margin: 10px;
+  --rl-card-padding: 10px 12px;
 }
 .rl-card {
   position: relative;

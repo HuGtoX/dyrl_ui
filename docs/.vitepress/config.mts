@@ -6,6 +6,7 @@ import {
 import AutoImport from "unplugin-auto-import/vite";
 import themeConfig from "./themeConfig";
 import path from "path";
+import { fileURLToPath, URL } from "node:url";
 
 console.log("-- [ __dirname ] --", path.resolve(__dirname, "../../"));
 // https://vitepress.dev/reference/site-config
@@ -13,7 +14,7 @@ export default defineConfig({
   title: "@dyrl/mobile",
   description: "A Company UI Package ",
   lang: "zh-CN",
-  base:"/dyrl_ui/",
+  base: "/dyrl_ui/",
   vite: {
     plugins: [
       demoblockVitePlugin(),
@@ -28,10 +29,16 @@ export default defineConfig({
       }),
     ],
     resolve: {
-      alias: {
-        "@root": path.resolve(__dirname, "../../"),
-        "@alias": path.resolve(__dirname, "../"),
-      },
+      alias: [
+        {
+          find: "@root",
+          replacement: path.resolve(__dirname, "../"),
+        },
+        {
+          find: "@alias",
+          replacement: path.resolve(__dirname, "../../"),
+        },
+      ],
     },
   },
   markdown: {

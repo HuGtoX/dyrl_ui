@@ -1,8 +1,9 @@
 <template>
   <span
     :class="['iconfont', `icon-${type}`, bem({ spin })]"
-    :style="omitByUndefined({ fontSize: addUnit(size), '--rl-icon-color': color })"
-  ></span>
+    :style="
+      omitByUndefined({ fontSize: addUnit(size), '--rl-icon-color': color })
+    "></span>
 </template>
 
 <script setup lang="ts">
@@ -35,6 +36,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import "./iconfont.css";
 .rl-icon {
   display: inline-flex;
   box-sizing: border-box;
