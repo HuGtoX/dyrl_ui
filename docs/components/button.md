@@ -3,39 +3,33 @@
 ## 基础用法
 
 ```vue
-<template>
-  <Space direction="vertical" size="12">
-    <Section type="line" title="按钮类型">
-      <Space wrap size="8">
-        <Button>默认按钮</Button>
-        <Button type="primary">主要按钮</Button>
-        <Button type="success">成功按钮</Button>
-        <Button type="warning">警告按钮</Button>
-        <Button type="danger">危险按钮</Button>
-        <Button type="text">文字按钮</Button>
-        <Button type="link">链接按钮</Button>
-      </Space>
-    </Section>
+<Button>默认按钮</Button>
+<Button type="primary">主要按钮</Button>
+<Button type="success">成功按钮</Button>
+<Button type="warning">警告按钮</Button>
+<Button type="danger">危险按钮</Button>
+<Button type="text">文字按钮</Button>
+<Button type="link">链接按钮</Button>
+```
 
-    <Section type="line" title="块级按钮">
-      <Button block type="primary">block</Button>
-    </Section>
+## 块级按钮
 
-    <Section type="line" title="按钮形状">
-      <Space size="8">
-        <Button type="success">round</Button>
-        <Button shape="square" type="primary">square</Button>
-      </Space>
-    </Section>
+```vue
+<Button block type="primary">block</Button>
+```
 
-    <Section type="line" title="图标按钮(内置Icon组件)">
-      <Space size="8">
-        <Button icon="time" type="success">round</Button>
-        <Button icon="download" shape="square" type="primary">square</Button>
-      </Space>
-    </Section>
-  </Space>
-</template>
+## 按钮形状
+
+```vue
+<Button type="success">round</Button>
+<Button shape="square" type="primary">square</Button>
+```
+
+## 图标按钮
+
+```vue
+<Button icon="time" type="success">round</Button>
+<Button icon="download" shape="square" type="primary">square</Button>
 ```
 
 ## 加载状态

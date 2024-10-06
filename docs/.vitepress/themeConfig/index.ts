@@ -1,9 +1,9 @@
 import { DefaultTheme } from "vitepress";
 
 const documentItems = [
-  { text: "微信SDK", link: "/others/wx" },
-  { text: "NFC识别", link: "/others/nfc" },
-  { text: "VSCode配置", link: "/others/vscode" },
+  { text: "微信SDK", link: "/others/wechat" },
+  { text: "NFC识别", link: "/others/nfcScan" },
+  { text: "vscode配置", link: "/others/vscode" },
   { text: "unoCSS", link: "/others/unoCSS" },
   { text: "chokidar", link: "/others/chokidar" },
   { text: "githubAction", link: "/others/githubAction" },
@@ -43,8 +43,14 @@ const themeConfig: DefaultTheme.Config = {
         ],
       },
       {
-        text: "组件",
-        items: [{ text: "Button", link: "/components/button" }],
+        text: "基础组件",
+        items: [
+          { text: "Button 按钮", link: "/components/button" },
+          { text: "Card 卡片", link: "/components/card" },
+          { text: "Cell 单元格", link: "/components/cell" },
+          { text: "Icon 图标", link: "/components/icon" },
+          { text: "Image 图片", link: "/components/image" },
+        ],
       },
     ],
   },

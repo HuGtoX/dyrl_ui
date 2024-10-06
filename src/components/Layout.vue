@@ -56,6 +56,7 @@ defineExpose({
 <style scoped lang="scss">
 .rl-page-container {
   padding: 0 12px;
+  padding-bottom: 10px;
   height: 100vh;
   display: flex;
   flex-direction: column;

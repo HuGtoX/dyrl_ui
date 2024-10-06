@@ -3,14 +3,12 @@
     :class="bem({ disabled })"
     :name="name"
     :rules="rules"
-    :style="{ '--rl-input-text-align': `${innerInputAlign}` }"
-  >
+    :style="{ '--rl-input-text-align': `${innerInputAlign}` }">
     <!-- 表单组件布局为flex-row -->
     <Cell
       :style="cellStyle"
       :titleStyle="labelStyle"
-      v-if="labelAlign === 'left'"
-    >
+      v-if="labelAlign === 'left'">
       <template #prefix>
         <div v-if="isRequired" class="text-danger">*</div>
       </template>
@@ -37,8 +35,7 @@
       :titleStyle="{ width: '100%' }"
       :clickable="clickable"
       :style="cellStyle"
-      v-if="labelAlign === 'top'"
-    >
+      v-if="labelAlign === 'top'">
       <template #prefix>
         <div v-if="isRequired" class="text-danger">*</div>
       </template>
@@ -51,8 +48,7 @@
               <Icon
                 v-if="arrow"
                 color="var(--rl-cell-right-icon-color)"
-                type="RightOutline"
-              ></Icon>
+                type="RightOutline"></Icon>
             </slot>
           </div>
         </div>

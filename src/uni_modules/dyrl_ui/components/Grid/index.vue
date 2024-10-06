@@ -14,18 +14,20 @@ export default {
 };
 </script>
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, type CSSProperties } from "vue";
 import { addUnit, createNamespace } from "../utils";
 
 type GridProps = {
-  columns: number | string;
+  columns?: number | string;
   gap?: number | string | [number | string, number | string];
 };
 const [name] = createNamespace("grid");
-const props = withDefaults(defineProps<GridProps>(), {});
+const props = withDefaults(defineProps<GridProps>(), {
+  columns: 24,
+});
 const style = computed(() => {
   const { gap } = props;
-  const style = {};
+  const style: CSSProperties = {};
   style["--columns"] = props.columns.toString();
   if (gap !== undefined) {
     if (Array.isArray(gap)) {
@@ -40,8 +42,6 @@ const style = computed(() => {
 </script>
 
 <style lang="scss">
-$class-prefix-grid: "rl-grid";
-
 .rl-grid {
   --gap: 0;
   --gap-horizontal: var(--gap);

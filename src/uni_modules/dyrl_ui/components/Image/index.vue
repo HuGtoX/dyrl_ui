@@ -1,13 +1,13 @@
 <template>
   <div :class="bem({ round, block })" :style="style">
     <div :class="bem('loading')" v-if="loading">
-      <Icon spin type="LoadingOutlined"></Icon>
+      <Icon spin type="LoadingOutlined" />
     </div>
     <div :class="bem('error')" v-if="isError">
       <slot name="error">
         <div>
-          <Icon v-if="errIcon" type="no-image" />
-          <span v-else>加载失败</span>
+          <Icon :size="fontSize" v-if="errIcon" type="no-image" />
+          <span :style="{ fontSize: `${fontSize}` }" v-else>加载失败</span>
         </div>
       </slot>
     </div>
@@ -32,7 +32,7 @@ type Numeric = string | number;
 type ImageProps = {
   round?: boolean;
   block?: boolean;
-  src?: string;
+  src: string;
   mode?: "scaleToFill" | "aspectFit" | "aspectFill" | "widthFix";
   size?: Numeric;
   width?: Numeric;
@@ -49,9 +49,7 @@ type ImageProps = {
  * 图片存储云空间
  */
 const ASSETS_URL = import.meta.env.VITE_ASSETS_URL + "/images";
-const EDU_ASSETS_URL = import.meta.env.VITE_EDU_ASSETS_URL + "/images";
 const props = withDefaults(defineProps<ImageProps>(), {
-  prefix: true,
   mode: "scaleToFill",
   width: 300,
   height: 225,
@@ -61,8 +59,13 @@ const loading = ref(true);
 const loadHandle = (load: boolean) => {
   if (load) loading.value = false;
 };
-
 const isError = ref(false);
+
+const fontSize = computed(() => {
+  let size = 14;
+  if (props.size) Number(props.size) > 42 && (size = 18);
+  return size;
+});
 
 watch(
   () => props.src,
@@ -78,7 +81,6 @@ const errorHandle = () => {
 
 const ImageSrc = computed(() => {
   if (props.src && props.src?.[0] !== "/") return props.src;
-  if (props.eduPrefix) return `${EDU_ASSETS_URL}${props.src}`;
   if (props.prefix) return `${ASSETS_URL}${props.src}`;
   return props.src;
 });
@@ -145,7 +147,7 @@ export default {
 
   &__loading,
   &__error {
-    flex: 1;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;

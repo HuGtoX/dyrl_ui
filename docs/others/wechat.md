@@ -1,5 +1,7 @@
 # 微信&企业微信SDK配置
 
+[微信网页授权](https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/Wechat_webpage_authorization.html)
+
 ### 企业微信SDK配置
 
 ```js

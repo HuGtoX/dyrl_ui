@@ -1,8 +1,14 @@
 <script setup lang="ts">
 import { onLaunch, onShow, onHide } from "@dcloudio/uni-app";
-onLaunch(() => {
-  console.log("App Launch");
-});
+
+window.addEventListener("message", receiveMessage, false);
+
+function receiveMessage(event) {
+  console.log("-- [ event ] --", event);
+  alert("receiveMessage");
+}
+
+onLaunch(() => {});
 onShow(() => {
   console.log("App Show");
 });

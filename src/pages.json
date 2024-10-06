@@ -1,10 +1,14 @@
 {
   "pages": [
     { "name": "首页", "path": "pages/home/index", "type": "home" },
-    { "name": "Button", "path": "pages/demo/button" },
-    { "name": "Card", "path": "pages/demo/card" },
-    { "name": "Cell", "path": "pages/demo/cell" },
-    { "name": "Icon", "path": "pages/demo/icon" }
+    { "name": "Button", "key": "基础组件", "path": "pages/demo/button" },
+    { "name": "Card", "key": "基础组件", "path": "pages/demo/card" },
+    { "name": "Cell", "key": "基础组件", "path": "pages/demo/cell" },
+    { "name": "Icon", "key": "基础组件", "path": "pages/demo/icon" },
+    { "name": "Image", "key": "基础组件", "path": "pages/demo/image" },
+    { "name": "Grid", "key": "基础组件", "path": "pages/demo/grid" },
+    { "name": "Popup", "key": "基础组件", "path": "pages/demo/popup" },
+    { "name": "Space", "key": "基础组件", "path": "pages/demo/space" }
   ],
   "easycom": {
     "autoscan": true,

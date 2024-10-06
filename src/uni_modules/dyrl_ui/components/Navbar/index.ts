@@ -4,6 +4,6 @@ export default NavBar;
 
 declare module "vue" {
   export interface GlobalComponents {
-    NavBar: typeof NavBar;
+    Navbar: typeof NavBar;
   }
 }

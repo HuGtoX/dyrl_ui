@@ -18,11 +18,10 @@
       </rl-section>
 
       <rl-section type="line" title="插槽">
-        <rl-cell radius="6" title="文件名" center>
+        <rl-cell title="文件名" center>
           <template #prefix>
             <rl-image
               radius="4"
-              errIcon
               size="32"
               style="margin-right: 4px"
               :prefix="false"

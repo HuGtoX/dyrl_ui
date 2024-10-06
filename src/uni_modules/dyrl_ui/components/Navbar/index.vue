@@ -54,7 +54,13 @@
 
 <script setup lang="ts">
 import { onShow } from "@dcloudio/uni-app";
-import { reactive, computed, inject } from "vue";
+import {
+  reactive,
+  computed,
+  inject,
+  type ComponentInternalInstance,
+  type CSSProperties,
+} from "vue";
 import { isEmpty } from "lodash-es";
 import {
   createNamespace,
@@ -101,7 +107,7 @@ const navRect = reactive({
   leftWidth: 0,
 });
 
-let instance;
+let instance: ComponentInternalInstance | null;
 onMounted(async () => {
   instance = getCurrentInstance();
   // 这里不设置延迟的话在小程序中无法正确获取导航左侧尺寸
@@ -126,7 +132,7 @@ function queryRect(el: any) {
 }
 
 const centerStyle = computed(() => {
-  const style = {
+  const style: CSSProperties = {
     maxWidth: `calc(100% - ${navRect.navPaddingRight + navRect.leftWidth}px)`,
   };
   if (!props.title) {

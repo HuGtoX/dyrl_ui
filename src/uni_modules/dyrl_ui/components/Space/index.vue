@@ -8,8 +8,7 @@
         fill: fill,
       })
     "
-    :style="spaceStyle"
-  >
+    :style="spaceStyle">
     <slot></slot>
   </div>
 </template>
@@ -29,10 +28,11 @@ type SpaceProps = {
 };
 const props = withDefaults(defineProps<SpaceProps>(), {
   direction: "horizontal",
+  size: 8,
 });
 
 const mergedAlign = computed(
-  () => props.align ?? (props.direction === "horizontal" ? "center" : ""),
+  () => props.align ?? (props.direction === "horizontal" ? "center" : "")
 );
 
 const spaceStyle = computed(() => {

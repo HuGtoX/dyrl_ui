@@ -2,18 +2,19 @@
   <div
     :style="customStyle"
     @click.stop="checkClick"
-    :class="bem([innerShape, { disabled, spread }])"
-  >
+    :class="bem([innerShape, { disabled, spread }])">
     <div
       :style="[
         checkStyle,
         innerShape !== 'dot' && iconBoxStyle,
         { width: addUnit(innerIconSize), height: addUnit(innerIconSize) },
       ]"
-      :class="bem('icon')"
-    >
+      :class="bem('icon')">
       <slot name="icon">
-        <Icon v-if="innerShape !== 'dot'" :color="innerIconColor" type="check" />
+        <Icon
+          v-if="innerShape !== 'dot'"
+          :color="innerIconColor"
+          type="check" />
         <div
           v-else
           :class="bem('icon--dot')"
@@ -22,8 +23,7 @@
               checked && disabled
                 ? 'var( --rl-radio-label-disabled-color)'
                 : iconBoxStyle?.background,
-          }"
-        ></div>
+          }"></div>
       </slot>
     </div>
     <slot>
@@ -38,13 +38,13 @@
 import { createNamespace, addUnit } from "../utils";
 import { computed, getCurrentInstance } from "vue";
 import { useParent } from "../../hooks";
-import { RADIO_GROUP_KEY } from "../RadioGroup";
-import Icon from "../Icon/index.vue";
+import { RADIO_GROUP_KEY } from "../Radio-Group";
+import Icon from "../Icon";
 
 type Numeric = string | number;
 type RadioBoxProps = {
   modelValue?: boolean;
-  name?: string | number;
+  name: Numeric;
   disabled?: boolean;
   bindGroup?: boolean;
   shape?: "round" | "dot";
@@ -69,7 +69,7 @@ const checkClick = () => {
   toggle();
   emit("change");
 };
-const getParentProp = <T>(name: T) => {
+const getParentProp = <T,>(name: T) => {
   if (parent && props.bindGroup) {
     return parent.props[name];
   }
@@ -97,7 +97,7 @@ const toggle = () => {
 };
 
 const instance = getCurrentInstance();
-Object.assign(instance.proxy, { props, checked });
+Object.assign(instance?.proxy!, { props, checked });
 
 const innerIconSize = props.iconSize || getParentProp("iconSize");
 const innerShape = props.shape || getParentProp("shape");
@@ -127,7 +127,7 @@ defineExpose({
 
 <script lang="ts">
 export default {
-  name: "Radio",
+  name: "rl-radio",
   options: {
     virtualHost: true,
   },

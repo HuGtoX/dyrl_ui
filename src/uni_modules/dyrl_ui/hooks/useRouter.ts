@@ -1,5 +1,5 @@
 import { isArray, isEmpty, isFunction } from "lodash-es";
-import { Ref } from "vue";
+import { type Ref } from "vue";
 type RouterOptions = {
   // 校验路由参数
   validateParams?: ((options: any) => Promise<boolean> | boolean) | string[];

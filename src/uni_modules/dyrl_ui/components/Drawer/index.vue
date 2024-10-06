@@ -4,8 +4,7 @@
     @maskClick="maskClickHandle"
     :safe-area="false"
     type="bottom"
-    ref="popupRef"
-  >
+    ref="popupRef">
     <div :class="bem({ safeAreaBottom })" :style="[drawerStyle, customStyle]">
       <div :class="bem('header')">
         <div :class="bem('header-title')">
@@ -65,7 +64,7 @@ const onClose = () => {
   if (typeof pageOverflow.value === "boolean") pageOverflow.value = true;
 };
 
-const pageOverflow = inject<Ref<boolean>>("pageOverflow", null);
+const pageOverflow = inject<Ref<boolean>>("pageOverflow", false);
 
 defineExpose({
   open: () => {

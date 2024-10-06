@@ -6,7 +6,7 @@
     class="iframe demo-model"
     scrolling="auto"
     frameborder="0"
-    :src="baseUrl"></iframe>
+    :src="href"></iframe>
 </template>
 
 <script setup lang="ts">
@@ -23,8 +23,9 @@ const href = computed(() => {
   const path = route.path;
   const paths = path ? path.split(".")[0].split("/") : [];
   let href = "";
+  console.log("-- [ paths ] --", paths);
   if (paths.length) {
-    href = baseUrl + `pages/${kebabToCamel(paths[paths.length - 1])}/Index`;
+    href = baseUrl + `pages/demo/${kebabToCamel(paths[paths.length - 1])}`;
   } else {
     href = baseUrl;
   }
@@ -34,24 +35,28 @@ const href = computed(() => {
 const iframe = ref<HTMLIFrameElement | null>(null);
 
 const vitepressData = useData();
-
 onMounted(() => {
   iframe.value &&
     iframe.value.addEventListener("load", () => {
       // 在iframe加载完成后执行发送消息的操作
-      ssendMessage();
+      sendMessage();
     });
 });
 
 watch(
   () => vitepressData.isDark.value,
   () => {
-    ssendMessage();
+    sendMessage();
   }
 );
 
-function ssendMessage() {
+function sendMessage() {
   if (iframe.value && iframe.value.contentWindow) {
+    console.log("-- [ sendMessage ] --", href.value);
+    console.log(
+      "-- [ iframe.value.contentWindow ] --",
+      iframe.value.contentWindow
+    );
     iframe.value.contentWindow.postMessage(
       vitepressData.isDark.value,
       href.value

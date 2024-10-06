@@ -16,10 +16,9 @@ function usePageId() {
   return computed(() => frontmatter.value.pageId || formatPath.value);
 }
 
-const DEV = inject<Ref<boolean>>("DEV");
+const DEV = inject<Ref<boolean>>("DEV", null);
 const { theme } = useData();
 const { footer, visitor } = theme.value;
-
 const { hasSidebar } = useSidebar();
 const pageId = usePageId();
 
