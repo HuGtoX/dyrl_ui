@@ -16,7 +16,7 @@ export default defineConfig(({ mode }) => {
         },
       },
     },
-    base: mode === "development" ? "/" : "/uni-ui-docs/demo/",
+    base: mode === "development" ? "/" : "/dyrl_ui/demo/",
     server: {
       port: Number(env.PORT) || 9000,
     },
