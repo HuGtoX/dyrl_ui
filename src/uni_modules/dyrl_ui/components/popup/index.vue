@@ -2,8 +2,7 @@
   <view
     v-if="showPopup"
     class="uni-popup"
-    :class="[popupstyle, isDesktop ? 'fixforpc-z-index' : '']"
-  >
+    :class="[popupstyle, isDesktop ? 'fixforpc-z-index' : '']">
     <view @touchstart="touchstart">
       <RlTransition
         key="1"
@@ -13,8 +12,7 @@
         :styles="maskClass"
         :duration="duration"
         :show="showTrans"
-        @click="onTap"
-      />
+        @click="onTap" />
       <RlTransition
         key="2"
         :mode-class="ani"
@@ -22,14 +20,12 @@
         :styles="transClass"
         :duration="duration"
         :show="showTrans"
-        @click="onTap"
-      >
+        @click="onTap">
         <view
           class="uni-popup__wrapper"
           :style="{ backgroundColor: bg }"
           :class="[popupstyle]"
-          @click="clear"
-        >
+          @click="clear">
           <slot />
         </view>
       </RlTransition>
@@ -44,7 +40,7 @@
 // #ifdef H5
 import keypress from "./keypress.js";
 // #endif
-import RlTransition from "../Transition/index.vue";
+import RlTransition from "../transition/index.vue";
 /**
  * PopUp 弹出层
  * @description 弹出层组件，为了解决遮罩弹层的问题

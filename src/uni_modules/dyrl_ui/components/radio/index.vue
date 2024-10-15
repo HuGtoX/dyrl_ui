@@ -38,8 +38,8 @@
 import { createNamespace, addUnit } from "../utils";
 import { computed, getCurrentInstance } from "vue";
 import { useParent } from "../../hooks";
-import { RADIO_GROUP_KEY } from "../Radio-Group";
-import Icon from "../Icon";
+import { RADIO_GROUP_KEY } from "../radio-group";
+import Icon from "../icon";
 
 type Numeric = string | number;
 type RadioBoxProps = {
