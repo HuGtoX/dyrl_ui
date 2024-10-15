@@ -7,6 +7,7 @@ import UnoCSS from "unocss/vite";
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
   return {
+    base: "./",
     css: {
       preprocessorOptions: {
         scss: {
@@ -16,7 +17,6 @@ export default defineConfig(({ mode }) => {
         },
       },
     },
-    root: mode === "development" ? "/" : "/dyrl_ui/demo/",
     server: {
       port: Number(env.PORT) || 9000,
     },
