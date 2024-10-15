@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 import { createNamespace } from "../utils";
-import Icon from "../Icon/index.vue";
+import Icon from "../icon/index.vue";
 
 const [name, bem] = createNamespace("copy");
 type CopyProps = {

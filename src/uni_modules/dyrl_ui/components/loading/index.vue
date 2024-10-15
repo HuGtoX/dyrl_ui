@@ -8,14 +8,12 @@
         v-if="type === 'circular'"
         :size="addUnit(size)"
         :color="color"
-        type="LoadingOutlined"
-      ></Icon>
+        type="LoadingOutlined"></Icon>
       <span v-else :class="bem('spinner', type)" :style="spinnerStyle">
         <i
           v-for="item in 12"
           :key="item"
-          :class="bem('line', String(item + 1))"
-        />
+          :class="bem('line', String(item + 1))" />
       </span>
     </slot>
 
@@ -28,7 +26,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { compact } from "lodash-es";
-import Icon from "../Icon/index.vue";
+import Icon from "../icon/index.vue";
 import {
   type Numeric,
   addUnit,

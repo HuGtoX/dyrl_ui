@@ -4,8 +4,7 @@
       prefix
       :style="imageStyle"
       src="/images/Auth/auth.png"
-      mode="aspectFit"
-    ></Image>
+      mode="aspectFit"></Image>
     <text class="need-login-text"> 当前未登录，请登录查看</text>
     <div class="need-login-btn-wrapper">
       <slot>
@@ -16,7 +15,7 @@
 </template>
 
 <script setup lang="ts">
-import Button from "../Button/index.vue";
+import Button from "../button/index.vue";
 import Image from "../Image/index.vue";
 import { addUnit } from "../utils";
 import { computed } from "vue";
@@ -34,7 +33,7 @@ const props = withDefaults(
   {
     textSize: "14px",
     size: 160,
-  },
+  }
 );
 
 const toLogin = () => {

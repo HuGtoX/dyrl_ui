@@ -5,14 +5,12 @@
         v-if="prefixIcon"
         :type="prefixIcon"
         :size="iconSize ?? addUnit(size)"
-        :color="iconColor ?? color"
-      />
+        :color="iconColor ?? color" />
     </slot>
 
     <span
       v-if="value || isNumber(value)"
-      :class="[bem('value'), `text-line-${line}`]"
-    >
+      :class="[bem('value'), `text-line-${line}`]">
       {{ value }}
     </span>
 
@@ -24,7 +22,7 @@
 import { addUnit, createNamespace, omitByUndefined } from "../utils";
 import { isNumber } from "lodash-es";
 import { computed } from "vue";
-import Icon from "../Icon/index.vue";
+import Icon from "../icon/index.vue";
 
 const [_, bem] = createNamespace("text");
 type Numeric = string | number;

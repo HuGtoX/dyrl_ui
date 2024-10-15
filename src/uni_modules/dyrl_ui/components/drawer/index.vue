@@ -28,7 +28,7 @@
 import { createNamespace } from "../utils";
 import { type Ref, ref, computed, getCurrentInstance, inject } from "vue";
 import Popup from "../Popup/index.vue";
-import Icon from "../Icon/index.vue";
+import Icon from "../icon/index.vue";
 
 const instance = getCurrentInstance();
 const drawerHeight = ref();

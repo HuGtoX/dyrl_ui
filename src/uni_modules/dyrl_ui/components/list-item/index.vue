@@ -8,7 +8,7 @@ export default {
 };
 </script>
 <script setup lang="ts">
-import Icon from "../Icon/index.vue";
+import Icon from "../icon/index.vue";
 
 defineProps<{
   arrow?: boolean;

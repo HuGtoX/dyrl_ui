@@ -41,7 +41,7 @@
 </template>
 
 <script setup lang="ts">
-import Icon from "../Icon/index.vue";
+import Icon from "../icon/index.vue";
 import Empty from "../Empty";
 import Drawer from "../Drawer/index.vue";
 import { isEmpty } from "lodash-es";

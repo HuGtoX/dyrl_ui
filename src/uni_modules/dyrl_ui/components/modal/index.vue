@@ -10,11 +10,17 @@
         </div>
       </div>
 
-      <div v-if="type === 'dialog'" :class="bem('dialog-body')" :style="customStyle">
+      <div
+        v-if="type === 'dialog'"
+        :class="bem('dialog-body')"
+        :style="customStyle">
         <slot></slot>
       </div>
 
-      <div v-if="type === 'confirm'" :class="bem('confirm-body')" :style="customStyle">
+      <div
+        v-if="type === 'confirm'"
+        :class="bem('confirm-body')"
+        :style="customStyle">
         <div :class="bem('confirm-body-title')">
           <Icon size="20" :color="iconColor" type="ExclamationCircleFill" />
           <span style="margin-left: 8px">{{ modalState.title }}</span>
@@ -37,7 +43,10 @@
             >取消</Button
           >
           <Button
-            :customStyle="[buttonStyle, { borderLeft: 0, color: 'var(--rl-blue)' }]"
+            :customStyle="[
+              buttonStyle,
+              { borderLeft: 0, color: 'var(--rl-blue)' },
+            ]"
             :loading-text="false"
             :onClick="onConfirm"
             size="large"
@@ -54,8 +63,8 @@
 import { createNamespace } from "../utils";
 import { ref, computed } from "vue";
 import Popup from "../Popup/index.vue";
-import Icon from "../Icon/index.vue";
-import Button from "../Button/index.vue";
+import Icon from "../icon/index.vue";
+import Button from "../button/index.vue";
 
 const [name, bem] = createNamespace("modal");
 type ModalProps = {

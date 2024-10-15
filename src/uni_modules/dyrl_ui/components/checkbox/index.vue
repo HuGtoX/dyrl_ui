@@ -2,22 +2,19 @@
   <div
     :style="customStyle"
     @click.stop="checkClick"
-    :class="bem([innerShape, { disabled, spread }])"
-  >
+    :class="bem([innerShape, { disabled, spread }])">
     <div
       :style="[
         checkStyle,
         innerShape !== 'dot' && iconBoxStyle,
         { width: addUnit(innerIconSize), height: addUnit(innerIconSize) },
       ]"
-      :class="bem('icon')"
-    >
+      :class="bem('icon')">
       <slot name="icon">
         <Icon
           v-if="innerShape !== 'dot'"
           :color="innerIconColor"
-          :type="indeterminate ? 'minus1' : 'check'"
-        />
+          :type="indeterminate ? 'minus1' : 'check'" />
 
         <div
           v-else
@@ -27,8 +24,7 @@
               checked && disabled
                 ? 'var( --rl-checkbox-label-disabled-color)'
                 : iconBoxStyle?.background,
-          }"
-        ></div>
+          }"></div>
       </slot>
     </div>
     <slot>
@@ -44,7 +40,7 @@ import { createNamespace, addUnit } from "../utils";
 import { computed } from "vue";
 import { useParent } from "../../hooks";
 import { CHECKBOX_GROUP_KEY } from "../CheckBoxGroup";
-import Icon from "../Icon/index.vue";
+import Icon from "../icon/index.vue";
 
 type Numeric = string | number;
 type CheckBoxProps = {
@@ -70,7 +66,7 @@ const props = withDefaults(defineProps<CheckBoxProps>(), {
 const emit = defineEmits(["update:modelValue", "change"]);
 
 const { parent } = useParent(CHECKBOX_GROUP_KEY);
-const getParentProp = <T>(name: T) => {
+const getParentProp = <T,>(name: T) => {
   if (parent && props.bindGroup) {
     return parent.props[name];
   }
@@ -151,7 +147,8 @@ const innerIconColor = computed(() => {
 });
 
 const iconBoxStyle = computed(() => {
-  const checkedColor = props.checkedColor || getParentProp("checkedColor") || "#1989fa";
+  const checkedColor =
+    props.checkedColor || getParentProp("checkedColor") || "#1989fa";
 
   if (checkedColor && checked.value && !disabled.value) {
     return {

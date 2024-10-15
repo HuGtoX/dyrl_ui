@@ -1,5 +1,7 @@
 <template>
-  <ListItem :class="[classPrefix, { [`${classPrefix}-active`]: active }]" @tap="onClick">
+  <ListItem
+    :class="[classPrefix, { [`${classPrefix}-active`]: active }]"
+    @tap="onClick">
     <slot></slot>
     <template #extra>
       <Icon v-if="active" color="#0173fc" size="16" type="CheckOutline"></Icon>
@@ -8,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import Icon from "../../Icon/index.vue";
+import Icon from "../../icon/index.vue";
 import ListItem from "../../ListItem/index.vue";
 import { inject, computed } from "vue";
 import { toString } from "lodash-es";
@@ -20,7 +22,9 @@ const context = inject<any>("context");
 
 const active = computed(() => {
   // return context.value.value.includes(props.value);
-  return context.value.value.some((item) => toString(item) === toString(props.value));
+  return context.value.value.some(
+    (item) => toString(item) === toString(props.value)
+  );
 });
 
 const onClick = () => {

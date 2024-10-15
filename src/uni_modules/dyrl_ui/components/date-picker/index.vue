@@ -8,21 +8,18 @@
     :hide-second="hideSecond"
     @maskClick="maskClick"
     @change="change"
-    v-model="innerValue"
-  >
+    v-model="innerValue">
     <div @click.stop="handleClick" :class="name">
       <Input
         style="flex: 1"
         :readOnly="true"
         :value="inputValue"
-        :placeholder="inputPlaceholder"
-      ></Input>
+        :placeholder="inputPlaceholder"></Input>
       <!-- 清除上次选中的状态和值	 -->
       <div
         v-if="!isEmpty(innerValue) && clearIcon && !readOnly"
         @click.stop="clear"
-        :class="bem('icon')"
-      >
+        :class="bem('icon')">
         <Icon type="close" />
       </div>
       <div v-if="arrow || $slots.extra" :class="bem('extra')">
@@ -30,8 +27,7 @@
           <Icon
             v-if="isEmpty(innerValue)"
             :style="iconStyle"
-            type="RightOutline"
-          />
+            type="RightOutline" />
         </slot>
       </div>
     </div>
@@ -39,7 +35,7 @@
 </template>
 <script setup lang="ts">
 import Input from "../Input/index.vue";
-import Icon from "../Icon/index.vue";
+import Icon from "../icon/index.vue";
 import { createNamespace } from "../utils";
 import { useVModel } from "../../hooks";
 import { isEmpty } from "lodash-es";
