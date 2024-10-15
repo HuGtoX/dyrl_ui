@@ -5,8 +5,7 @@
         :disabled="disabled"
         :readOnly="true"
         :value="inputValue"
-        :placeholder="placeholder"
-      ></Input>
+        :placeholder="placeholder"></Input>
 
       <div v-if="arrow || $slots.extra || clear" :class="bem('content__extra')">
         <Icon @tap.stop="clearHandle" v-if="isClear" type="close"></Icon>
@@ -14,8 +13,7 @@
           <Icon
             v-if="isArrow && !readOnly"
             :style="iconStyle"
-            type="RightOutline"
-          ></Icon>
+            type="RightOutline"></Icon>
         </slot>
       </div>
     </div>
@@ -24,27 +22,23 @@
       :maskClick="maskClick"
       style="text-align: left"
       ref="drawerRef"
-      :title="placeholder"
-    >
+      :title="placeholder">
       <Search
         v-if="search"
         style="margin: 0 12px 10px 12px"
         @search="searchClick"
         @clear="searchClick"
-        @clickIcon="searchClick"
-      ></Search>
+        @clickIcon="searchClick"></Search>
 
       <scroll-view
         scroll-y
         @scrolltolower="loadMore"
-        :class="bem('scroll-view')"
-      >
+        :class="bem('scroll-view')">
         <CheckList :multiple="multiple" v-model:value="checkListValue">
           <CheckListItem
             v-for="item in options"
             :key="item.value"
-            :value="item.value"
-          >
+            :value="item.value">
             {{ item.label }}
           </CheckListItem>
         </CheckList>
@@ -61,14 +55,14 @@
   </div>
 </template>
 <script setup lang="ts">
-import Input from "../Input/index.vue";
-import Drawer from "../Drawer/index.vue";
-import Button from "../Button/index.vue";
+import Input from "../input/index.vue";
+import Drawer from "../drawer/index.vue";
+import Button from "../button/index.vue";
 import CheckList from "./components/CheckList.vue";
 import CheckListItem from "./components/CheckListItem.vue";
-import Search from "../Search/index.vue";
-import Empty from "../Empty/index.vue";
-import Icon from "../Icon/index.vue";
+import Search from "../search/index.vue";
+import Empty from "../empty/index.vue";
+import Icon from "../icon/index.vue";
 import { createNamespace, omitByUndefined, addUnit } from "../utils";
 import { computed, ref, watch } from "vue";
 import {
@@ -190,7 +184,7 @@ watch(
         (checkListValue.value[0] = newVal);
     }
   },
-  { immediate: true },
+  { immediate: true }
 );
 
 const inputValue = computed(() => {
@@ -205,7 +199,7 @@ const inputValue = computed(() => {
     .map((item) => {
       const selectedItem = find(
         props.options,
-        (option) => get(option, props.fieldNames.value) == item,
+        (option) => get(option, props.fieldNames.value) == item
       );
       return renderLabel(selectedItem);
     })

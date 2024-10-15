@@ -16,10 +16,10 @@
 </template>
 
 <script setup lang="ts">
-import Icon from "../Icon/index.vue";
+import Icon from "../icon/index.vue";
 import { createNamespace, addUnit } from "../utils";
 import { useParent } from "../../hooks";
-import { STEPS_KEY } from "../Steps";
+import { STEPS_KEY } from "../steps";
 
 type Steps = {
   title?: string;

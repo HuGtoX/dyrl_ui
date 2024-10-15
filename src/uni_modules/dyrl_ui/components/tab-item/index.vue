@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 import { createNamespace } from "../utils";
-import { TABS_KEY } from "../Tabs/index";
+import { TABS_KEY } from "../tabs/index";
 import { useParent } from "../../hooks";
 
 const { parent } = useParent(TABS_KEY);

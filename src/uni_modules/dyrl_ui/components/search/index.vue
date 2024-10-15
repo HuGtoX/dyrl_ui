@@ -8,8 +8,7 @@
           borderRadius: shape == 'round' ? '100px' : '4px',
           borderColor: borderColor,
         },
-      ]"
-    >
+      ]">
       <div :class="bem('content__disabled')" v-if="disabled"></div>
 
       <input
@@ -35,13 +34,11 @@
             height: addUnit(height),
           },
           inputStyle,
-        ]"
-      />
+        ]" />
       <div
         :class="[bem('content__icon'), bem('content__close')]"
         v-if="keyword && clearabled && focused"
-        @tap="clear"
-      >
+        @tap="clear">
         <Icon type="reject" color="#ffffff" style="line-height: 12px"></Icon>
       </div>
 
@@ -51,8 +48,7 @@
             @tap="clickIcon"
             :size="searchIconSize"
             type="index-search"
-            :color="searchIconColor ? searchIconColor : color"
-          ></Icon>
+            :color="searchIconColor ? searchIconColor : color"></Icon>
         </div>
       </slot>
       <slot name="suffix"></slot>
@@ -69,7 +65,7 @@
 </template>
 
 <script setup lang="ts">
-import Icon from "../Icon/index.vue";
+import Icon from "../icon/index.vue";
 import { createNamespace, addUnit } from "../utils";
 
 const [name, bem] = createNamespace("search");

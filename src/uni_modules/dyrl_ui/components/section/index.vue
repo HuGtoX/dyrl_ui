@@ -36,8 +36,7 @@
             size="small"
             type="link"
             v-if="moreText"
-            :onClick="moreClick"
-          >
+            :onClick="moreClick">
             <span :class="bem('header__more-text')">
               {{ moreText }}
               <Icon :size="12" type="RightOutline" />
@@ -49,8 +48,7 @@
 
     <div
       :class="bem('content')"
-      :style="omitByUndefined({ padding: paddingSpace, background })"
-    >
+      :style="omitByUndefined({ padding: paddingSpace, background })">
       <slot />
     </div>
   </div>
@@ -58,8 +56,8 @@
 
 <script lang="ts" setup>
 import { addUnit, omitByUndefined, createNamespace } from "../utils";
-import Icon from "../Icon/index.vue";
-import Button from "../Button/index.vue";
+import Icon from "../icon/index.vue";
+import Button from "../button/index.vue";
 import { computed } from "vue";
 
 const [name, bem] = createNamespace("section");

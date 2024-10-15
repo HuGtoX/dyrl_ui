@@ -1,16 +1,14 @@
 <template>
   <div
     :style="[tagStyle, customStyle]"
-    :class="bem([type, size, shape, { disabled, border, plain }])"
-  >
+    :class="bem([type, size, shape, { disabled, border, plain }])">
     <slot name="prefix">
       <Icon v-if="icon" :type="icon" />
     </slot>
 
     <span
       :class="[bem('text', [size]), 'text-line-1']"
-      :style="defaultSlotStyle"
-    >
+      :style="defaultSlotStyle">
       <slot></slot>
     </span>
 
@@ -21,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-import Icon from "../Icon/index.vue";
+import Icon from "../icon/index.vue";
 import { createNamespace, omitByUndefined, addUnit } from "../utils";
 import { computed } from "vue";
 
@@ -54,7 +52,7 @@ const tagStyle = computed(() =>
     color: props.color,
     borderColor: props.borderColor,
     borderRadius: addUnit(props.borderRadius),
-  }),
+  })
 );
 
 const defaultSlotStyle = computed(() => {

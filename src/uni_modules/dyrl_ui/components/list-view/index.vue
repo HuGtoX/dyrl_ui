@@ -13,8 +13,7 @@
       @refresherrefresh="onRefresherRefresh"
       @refresherpulling="onRefresherPulling"
       @refresherrestore="onRefresherRestore"
-      @refresherabort="onRefresherRestore"
-    >
+      @refresherabort="onRefresherRestore">
       <div v-if="refreshLoading" :class="bem('custom-refresher-view')">
         <div :class="bem('custom-refresher-placeholder')"></div>
         <!-- 下拉刷新view -->
@@ -36,8 +35,7 @@
 
       <div
         :class="bem('empty')"
-        v-if="!loading && isEmpty(data?.list) && empty"
-      >
+        v-if="!loading && isEmpty(data?.list) && empty">
         <Empty description="暂无数据" />
       </div>
 
@@ -56,8 +54,7 @@
 
       <div
         :class="bem('no-more')"
-        v-if="!loading && !hasMore && !isEmpty(data?.list)"
-      >
+        v-if="!loading && !hasMore && !isEmpty(data?.list)">
         <slot name="no-more">
           <span type="spinner">{{ noMoreText }}</span>
         </slot>
@@ -70,8 +67,8 @@ import { provide, computed, ref, watch } from "vue";
 import { useInfiniteScroll, useUpdate } from "../../hooks";
 import { createNamespace } from "../utils";
 import { isEmpty, isEqual } from "lodash-es";
-import Empty from "../Empty/index.vue";
-import Loading from "../Loading/index.vue";
+import Empty from "../empty/index.vue";
+import Loading from "../loading/index.vue";
 import { getRect } from "../utils";
 
 type ListViewProps = {
@@ -137,11 +134,11 @@ const { data, loading, loadingMore, loadMore, reload, mutate } =
         await nextTick();
         const contentRect = (await getRect(
           "#list-content",
-          instance.value,
+          instance.value
         )) as UniApp.NodeInfo;
         const wrapRect = (await getRect(
           "#list",
-          instance.value,
+          instance.value
         )) as UniApp.NodeInfo;
 
         if (contentRect.height < wrapRect.height) {
@@ -154,7 +151,7 @@ const { data, loading, loadingMore, loadMore, reload, mutate } =
           }
         }
       },
-    },
+    }
   );
 
 // 请求参数更新
@@ -178,11 +175,11 @@ const refreshLoading = computed(() => {
   return refreshOffsetY.value !== 0 || refresh.value;
 });
 const hasMore = computed(
-  () => data.value && data.value?.list.length < data.value.total,
+  () => data.value && data.value?.list.length < data.value.total
 );
 
 const reachRefresh = computed(
-  () => refreshOffsetY.value > props.refresherThreshold + 5,
+  () => refreshOffsetY.value > props.refresherThreshold + 5
 );
 
 const onRefresherRestore = () => {

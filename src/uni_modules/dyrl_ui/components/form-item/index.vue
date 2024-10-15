@@ -62,8 +62,8 @@
 </template>
 
 <script setup lang="ts">
-import Cell from "../Cell/index.vue";
-import Icon from "../Icon/index.vue";
+import Cell from "../cell/index.vue";
+import Icon from "../icon/index.vue";
 import { createNamespace, addUnit } from "../utils";
 import { useChildren } from "../../hooks";
 import { FORM_ITEM_KEY } from "./index";

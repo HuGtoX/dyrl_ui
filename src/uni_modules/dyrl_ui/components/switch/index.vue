@@ -4,13 +4,11 @@
     <div
       :class="bem('node', { on: innerValue })"
       :style="[nodeStyle]"
-      ref="rl-switch__node"
-    >
+      ref="rl-switch__node">
       <Loading
         v-if="loading"
         :color="innerValue ? activeColor : '#AAABAD'"
-        :size="size * 0.6"
-      />
+        :size="size * 0.6" />
     </div>
   </div>
 </template>
@@ -19,7 +17,7 @@
 import { createNamespace, addUnit } from "../utils";
 import { computed, ref, nextTick } from "vue";
 import { useVModel } from "../../hooks/useVModel";
-import Loading from "../Loading/index.vue";
+import Loading from "../loading/index.vue";
 
 const [name, bem] = createNamespace("switch");
 type SwitchProps = {
@@ -59,7 +57,9 @@ const switchStyle = computed(() => {
   if (props.customInactiveColor) {
     style.borderColor = "rgba(0, 0, 0, 0)";
   }
-  style.backgroundColor = isActive.value ? props.activeColor : props.inactiveColor;
+  style.backgroundColor = isActive.value
+    ? props.activeColor
+    : props.inactiveColor;
   return style;
 });
 
@@ -68,7 +68,9 @@ const nodeStyle = computed(() => {
   // 如果自定义非激活颜色，将node圆点的尺寸减少两个像素，让其与外边框距离更大一点
   style.width = addUnit(props.size - props.space);
   style.height = addUnit(props.size - props.space);
-  const translateX = isActive.value ? addUnit(props.space) : addUnit(props.size);
+  const translateX = isActive.value
+    ? addUnit(props.space)
+    : addUnit(props.size);
   style.transform = `translateX(-${translateX})`;
   return style;
 });
