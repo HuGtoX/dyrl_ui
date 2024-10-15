@@ -33,12 +33,13 @@ try {
   const files = await readdir(comDirname);
   for (const file of files) {
     // const name = transformName(file);
+    // console.log("--- file.slice(1) ---", file.slice(1));
     try {
       await rename(
         path.join(comDirname, file),
-        path.join(comDirname, "a" + file)
+        path.join(comDirname, file.slice(1))
       );
-      console.log(`文件夹已从 "${file}" 重命名为 "${file🚧🚧🚧\u{1F6A7}}"`);
+      console.log(`文件夹已从 "${file}" 重命名为 "${file.slice(1)}"`);
     } catch (error) {
       console.error(`重命名文件夹失败: ${error.message}`);
     }
