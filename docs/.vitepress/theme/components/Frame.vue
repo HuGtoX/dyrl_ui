@@ -15,7 +15,7 @@ import { computed, onMounted, ref, watch } from "vue";
 
 const baseUrl =
   process.env.NODE_ENV === "production"
-    ? `${location.origin}/dyrl_ui/demo/?timestamp=${new Date().getTime()}#/`
+    ? `${location.origin}/dyrl_ui/demo?timestamp=${new Date().getTime()}#/`
     : "http://localhost:9000/#/";
 
 const route = useRoute();
