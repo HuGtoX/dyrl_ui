@@ -70,8 +70,8 @@ import {
   getRect,
   sleep,
 } from "../utils";
-import Button from "../Button/index.vue";
-import Icon from "../Icon/index.vue";
+import Button from "../button/index.vue";
+import Icon from "../icon/index.vue";
 
 const renderStatusBarHeight = inject<any>("rl-statusBarHeight", null);
 const [name, bem] = createNamespace("nav-bar");

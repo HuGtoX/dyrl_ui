@@ -7,7 +7,7 @@
 <script setup lang="ts">
 import { createNamespace, addUnit } from "../utils";
 import { useParent } from "../../hooks";
-import { ROW_KEY } from "../Row";
+import { ROW_KEY } from "../row";
 import { computed } from "vue";
 
 const [_, bem] = createNamespace("col");

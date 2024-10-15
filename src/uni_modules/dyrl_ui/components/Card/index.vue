@@ -76,9 +76,9 @@
 <script setup lang="ts">
 import { addUnit, createNamespace } from "../utils";
 import { computed, type CSSProperties } from "vue";
-import Avatar from "../Avatar/index.vue";
-import Button from "../Button/index.vue";
-import Icon from "../Icon/index.vue";
+import Avatar from "../avatar/index.vue";
+import Button from "../button/index.vue";
+import Icon from "../icon/index.vue";
 
 type Numeric = string | number;
 type CardProps = {

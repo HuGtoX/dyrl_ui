@@ -25,7 +25,7 @@
 <script setup lang="ts">
 import { addUnit, createNamespace, isDef } from "../utils";
 import { computed, ref } from "vue";
-import Icon from "../Icon/index.vue";
+import Icon from "../icon/index.vue";
 
 const [_, bem] = createNamespace("image");
 type Numeric = string | number;

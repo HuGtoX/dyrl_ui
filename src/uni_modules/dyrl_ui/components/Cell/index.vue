@@ -2,8 +2,7 @@
   <div
     :class="bem({ borderless: !border, center, clickable })"
     :style="[cellStyle, customStyle]"
-    @click="cellClick"
-  >
+    @click="cellClick">
     <slot name="prefix">
       <div v-if="icon" :class="bem('prefix')">
         <Icon :type="icon" />
@@ -38,7 +37,7 @@
 
 <script setup lang="ts">
 import { createNamespace, omitByUndefined, addUnit } from "../utils";
-import Icon from "../Icon/index.vue";
+import Icon from "../icon/index.vue";
 import { computed } from "vue";
 const [_, bem] = createNamespace("cell");
 type Numeric = string | number;

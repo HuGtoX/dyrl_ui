@@ -18,8 +18,7 @@
         @error="errorHandle"
         :class="bem('img')"
         :src="src"
-        :alt="alt"
-      />
+        :alt="alt" />
 
       <div v-else :class="bem('text')">
         <span v-if="text">{{ text?.[0] }}</span>
@@ -32,7 +31,7 @@
 <script setup lang="ts">
 import { createNamespace, isDef, addUnit, omitByUndefined } from "../utils";
 import { computed, ref } from "vue";
-import Icon from "../Icon/index.vue";
+import Icon from "../icon/index.vue";
 const [_, bem] = createNamespace("avatar");
 type Numeric = string | number;
 type AvatarProps = {

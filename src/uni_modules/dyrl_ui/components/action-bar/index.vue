@@ -12,13 +12,12 @@
       v-if="placeholder"
       :style="{
         height: placeholderHeight + 'px',
-      }"
-    ></div>
+      }"></div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import SafeArea from "../SafeArea/index.vue";
+import SafeArea from "../safe-area/index.vue";
 import { onMounted, ref } from "vue";
 import { createNamespace } from "../utils";
 /**

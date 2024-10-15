@@ -28,7 +28,7 @@ export default {
 <script setup lang="ts">
 import { ref, computed } from "vue";
 import { createNamespace, isPromise } from "../utils";
-import Icon from "../Icon/index.vue";
+import Icon from "../icon/index.vue";
 
 const [_, bem] = createNamespace("button");
 type ButtonProps = {
