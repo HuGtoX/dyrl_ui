@@ -3,12 +3,13 @@ import { onLaunch, onShow, onHide } from "@dcloudio/uni-app";
 
 window.addEventListener("message", receiveMessage, false);
 
-function receiveMessage(event) {
+function receiveMessage(event: any) {
   console.log("-- [ event ] --", event);
-  alert("receiveMessage");
 }
 
-onLaunch(() => {});
+onLaunch(() => {
+  console.log("App onLaunch");
+});
 onShow(() => {
   console.log("App Show");
 });

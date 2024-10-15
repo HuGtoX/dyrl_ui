@@ -2,7 +2,7 @@ import { isArray, isEmpty, isFunction } from "lodash-es";
 import { type Ref } from "vue";
 type RouterOptions = {
   // 校验路由参数
-  validateParams?: ((options: any) => Promise<boolean> | boolean) | string[];
+  validateParams?: (options: any) => Promise<boolean> | boolean | string[];
 };
 
 interface ParamsType {
@@ -14,14 +14,14 @@ const useRouter = (routeOptions: RouterOptions = {}) => {
   const isWrong = ref(false);
   let params: Ref<ParamsType> = ref({});
 
-  onLoad(async (options) => {
+  onLoad(async (options = {}) => {
     params.value = options;
 
-    if (isFunction(validateParams)) {
-      isWrong.value = await validateParams(options);
+    if (validateParams && isFunction(validateParams)) {
+      isWrong.value = (await validateParams(options)) as boolean;
     }
 
-    if (isArray(validateParams)) {
+    if (validateParams && isArray(validateParams)) {
       const keys = Object.keys(options);
       isWrong.value = validateParams.some((key) => !keys.includes(key));
     }

@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "type": "commonjs",
   "scripts": {
-    "dev:h5": "uni --port 9000",
-    "build:h5": "uni build",
+    "start": "uni",
+    "build": "uni build",
     "type-check": "vue-tsc --noEmit",
     "start:docs": "vitepress dev docs",
-    "build:docs": "vitepress build docs"
+    "build:docs": "vitepress build docs",
+    "build:deploy:docs": "pnpm build && pnpm build:docs && node build/demoCopy.js"
   },
   "dependencies": {
     "@dcloudio/uni-app": "3.0.0-4000820240401001",
@@ -26,6 +27,7 @@
     "@dcloudio/uni-cli-shared": "3.0.0-4000820240401001",
     "@dcloudio/uni-stacktracey": "3.0.0-4000820240401001",
     "@dcloudio/vite-plugin-uni": "3.0.0-4000820240401001",
+    "@types/lodash-es": "^4.17.12",
     "@unocss/preset-legacy-compat": "^0.59.4",
     "@vitejs/plugin-vue": "^4.4.0",
     "@vue/runtime-core": "3.3.11",
