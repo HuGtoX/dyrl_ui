@@ -5,6 +5,7 @@
   "scripts": {
     "start": "uni",
     "build": "uni build",
+    "preview": "vite preview",
     "type-check": "vue-tsc --noEmit",
     "start:docs": "vitepress dev docs",
     "build:docs": "vitepress build docs",
