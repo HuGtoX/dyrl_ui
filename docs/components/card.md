@@ -1,5 +1,31 @@
 <Frame />
 
+<script setup>
+import { ElTable,ElTableColumn } from 'element-plus'
+const tableData = [
+  {
+    date: '2016-05-03',
+    name: 'Tom',
+    address: 'No. 189, Grove St, Los Angeles',
+  },
+  {
+    date: '2016-05-02',
+    name: 'Tom',
+    address: 'No. 189, Grove St, Los Angeles',
+  },
+  {
+    date: '2016-05-04',
+    name: 'Tom',
+    address: 'No. 189, Grove St, Los Angeles',
+  },
+  {
+    date: '2016-05-01',
+    name: 'Tom',
+    address: 'No. 189, Grove St, Los Angeles',
+  },
+]
+</script>
+
 ## 基础用法
 
 ```vue
@@ -21,9 +47,9 @@
 
 ## Attributes
 
-| 参数    | 说明   | 类型             | 可选值                                      | 默认值  |
-| ------- | ------ | ---------------- | ------------------------------------------- | ------- |
-| size    | 尺寸   | string           | large / small / mini                        | default |
-| type    | 类型   | string           | primary / success / warning / danger / text | default |
-| block   | 类型   | string           | primary / success / warning / danger / text | default |
-| loading | 加载中 | 'auto' / boolean | —                                           | false   |
+  <el-table :data="tableData" >
+    <el-table-column prop="date" label="参数" width="180" />
+    <el-table-column prop="name" label="说明" width="180" />
+    <el-table-column prop="date" label="类型" />
+    <el-table-column prop="name" label="默认值" />
+  </el-table>

@@ -1,8 +1,27 @@
 # VSCode 常用配置及插件
 
+## 常用插件
+
+```json
+{
+  "recommendations": [
+    "vue.volar", // Volar
+    "stylelint.vscode-stylelint", // Stylelint
+    "esbenp.prettier-vscode", // prettier
+    "dbaeumer.vscode-eslint", // ESLint
+    "antfu.unocss", // UnoCSS
+    "MS-CEINTL.vscode-language-pack-zh-hans", // vscode 中文（简体）语言包
+    "mhutchie.git-graph", // git 提交记录
+    "donjayamanne.githistory", // git 历史记录
+    "Alibaba-Cloud.tongyi-lingma", // 通义灵码
+    "streetsidesoftware.code-spell-checker" // 单词拼写检查
+  ]
+}
+```
+
 ## 项目配置
 
-1. 配置文件：`.vscode/settings.json`
+配置文件：`.vscode/settings.json`
 
 ```json
  // 控制相关文件嵌套展示
@@ -20,8 +39,9 @@
   }
 ```
 
-2. 代码片段  
-   VS Code 提供了不少内置变量,可以在代码片段中使用。这些变量会在插入片段时被实际值替换。
+## 代码片段
+
+VS Code 提供了不少内置变量,可以在代码片段中使用。这些变量会在插入片段时被实际值替换。
 
 常用内置变量:
 
@@ -30,6 +50,10 @@
 - $TM_DIRECTORY: 当前文件所在的目录
 - $TM_FILEPATH: 当前文件的完整文件路径
 - $CLIPBOARD: 当前剪贴板中的内容
+
+### console.log 代码片段
+
+自动填入剪切板的内容
 
 ```json
 {

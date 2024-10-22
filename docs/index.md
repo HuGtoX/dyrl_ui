@@ -5,6 +5,9 @@ layout: home
 hero:
   name: "@dyr/mobile"
   text: "移动端组件库"
+  image:
+    src: /static/logo.png
+    alt: "Gixy's Logo"
   tagline: 基于 Vue3+TypeScript 的uniapp组件库
   actions:
     - theme: brand
@@ -28,6 +31,6 @@ features:
   - icon: 📚
     title: 其他文档
     details: 项目开发中常用配置等信息记录
-    link: /others/wx
+    link: /note/
     linkText: 前往查看
 ---

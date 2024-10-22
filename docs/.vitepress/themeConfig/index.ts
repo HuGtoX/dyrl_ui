@@ -1,12 +1,13 @@
 import { DefaultTheme } from "vitepress";
 
-const documentItems = [
-  { text: "微信SDK", link: "/others/wechat" },
-  { text: "NFC识别", link: "/others/nfcScan" },
-  { text: "vscode配置", link: "/others/vscode" },
-  { text: "unoCSS", link: "/others/unoCSS" },
-  { text: "chokidar", link: "/others/chokidar" },
-  { text: "githubAction", link: "/others/githubAction" },
+const extensionItems = [
+  { text: "VSCode配置", link: "/note/extension/vscode" },
+  { text: "WechatSDK", link: "/note/extension/wechat" },
+  { text: "UniNFC", link: "/note/extension/nfcScan" },
+  { text: "UnoCSS", link: "/note/extension/unoCSS" },
+  { text: "Chokidar", link: "/note/extension/chokidar" },
+  { text: "GithubAction", link: "/note/extension/githubAction" },
+  { text: "WebExtension", link: "/note/extension/extension" },
 ];
 
 const themeConfig: DefaultTheme.Config = {
@@ -21,17 +22,24 @@ const themeConfig: DefaultTheme.Config = {
     { text: "组件", link: "/components/home" },
     { text: "导航", link: "/nav/" },
     {
-      text: "文档",
-      activeMatch: "/others/",
-      items: documentItems,
+      text: "个人文档",
+      link: "/note/",
     },
   ],
 
   sidebar: {
-    "/others": [
+    "/note": [
       {
-        text: "文档",
-        items: documentItems,
+        text: "拓展文档",
+        items: extensionItems,
+      },
+      {
+        text: "前端学习笔记",
+        items: [
+          { text: "HTML", link: "/note/frontEnd/html" },
+          { text: "JavaScript", link: "/note/frontEnd/javascript" },
+          { text: "面试题", link: "/note/frontEnd/interview" },
+        ],
       },
     ],
     "/components": [

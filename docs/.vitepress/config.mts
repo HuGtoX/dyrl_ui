@@ -6,16 +6,24 @@ import {
 import AutoImport from "unplugin-auto-import/vite";
 import themeConfig from "./themeConfig";
 import path from "path";
-import { fileURLToPath, URL } from "node:url";
 
-console.log("-- [ __dirname ] --", path.resolve(__dirname, "../../"));
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "@dyrl/mobile",
   description: "A Company UI Package ",
   lang: "zh-CN",
   base: "/dyrl_ui/",
+
   vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: "modern-compiler", // or "modern", "legacy"
+          silenceDeprecations: ["legacy-js-api"],
+          importers: [],
+        },
+      },
+    },
     plugins: [
       demoblockVitePlugin(),
       AutoImport({
@@ -47,6 +55,14 @@ export default defineConfig({
         customClass: "demoblock-custom",
       });
     },
+    container: {
+      tipLabel: "提示",
+      warningLabel: "警告",
+      dangerLabel: "危险",
+      infoLabel: "参考",
+      detailsLabel: "详细信息",
+    },
   },
+
   themeConfig: themeConfig,
 });

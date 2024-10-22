@@ -16,7 +16,7 @@
 
 <script setup lang="ts">
 import Button from "../button/index.vue";
-import Image from "../Image/index.vue";
+import Image from "../image/index.vue";
 import { addUnit } from "../utils";
 import { computed } from "vue";
 

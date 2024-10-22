@@ -42,12 +42,35 @@ export const NAV_DATA: NavData[] = [
     ],
   },
   {
+    title: "Github 项目",
+    items: [
+      {
+        icon: "https://avatars.githubusercontent.com/u/33169019?v=4",
+        title: "WindRunnerMax",
+        desc: "文档编辑器、Canvas 简历编辑器、P2P 局域网文件传输、油猴脚本 & 浏览器扩展、前端基础 个人博客 学习笔记",
+        link: "https://github.com/WindRunnerMax",
+      },
+      {
+        icon: "https://avatars.githubusercontent.com/u/143585159?s=200&v=4",
+        title: "Unplugin",
+        desc: "unplugin-auto-import、unplugin-iconsunplugin-icons",
+        link: "https://github.com/unplugin",
+      },
+      {
+        icon: "https://avatars.githubusercontent.com/u/13335464?s=200&v=4",
+        title: "Tampermonkey",
+        desc: "油猴脚本",
+        link: "https://github.com/Tampermonkey",
+      },
+    ],
+  },
+  {
     title: "AI 导航",
     items: [
       {
-        icon: "/icons/chatgpt.png",
-        title: "ChatGPT（最强）",
-        link: "https://chat.openai.com/chat",
+        icon: "https://statics.moonshot.cn/kimi-chat/favicon.ico",
+        title: "Kimi.ai - 帮你看更大的世界",
+        link: "https://kimi.moonshot.cn/",
       },
       {
         icon: "https://www.notion.so/images/logo-ios.png",

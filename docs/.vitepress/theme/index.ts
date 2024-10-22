@@ -5,11 +5,12 @@ import DefaultTheme from "vitepress/theme";
 import { useData } from "vitepress";
 import { useComponents } from "./useComponents";
 import "./style.css";
-import "./overrides.scss";
 import "vitepress-theme-demoblock/dist/theme/styles/index.css";
 import Layout from "./components/Layout.vue";
 import NavLinks from "./components/NavLinks.vue";
 import Frame from "./components/Frame.vue";
+import "element-plus/dist/index.css";
+import "./overide.scss";
 
 export default {
   extends: DefaultTheme,
