@@ -6,7 +6,7 @@ hero:
   name: "@dyr/mobile"
   text: "移动端组件库"
   image:
-    src: /static/logo.png
+    src: /logo.png
     alt: "Gixy's Logo"
   tagline: 基于 Vue3+TypeScript 的uniapp组件库
   actions:
