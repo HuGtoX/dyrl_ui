@@ -10,10 +10,10 @@ import path from "path";
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "@dyrl/mobile",
-  description: "A Company UI Package ",
+  description: "A Company UI Package",
   lang: "zh-CN",
   base: "/dyrl_ui/",
-
+  lastUpdated: true,
   vite: {
     css: {
       preprocessorOptions: {
