@@ -14,6 +14,7 @@ const frontEndItems = [
   { text: "JavaScript", link: "/note/frontEnd/javascript" },
   { text: "Node", link: "/note/frontEnd/node" },
   { text: "Interview", link: "/note/frontEnd/interview" },
+  { text: "Antd", link: "/note/frontEnd/antd" },
 ];
 
 const projectItems = [{ text: "VitePress", link: "/note/project/vitepress" }];

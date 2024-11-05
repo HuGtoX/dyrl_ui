@@ -1,6 +1,7 @@
 import { DefaultTheme } from "vitepress";
 import { extensionItems, frontEndItems } from "./note";
 import componentItems from "./component";
+import navItems from "./nav";
 
 const themeConfig: DefaultTheme.Config = {
   /* 右侧大纲配置 */
@@ -9,15 +10,7 @@ const themeConfig: DefaultTheme.Config = {
     label: "目录",
   },
   // https://vitepress.dev/reference/default-theme-config
-  nav: [
-    { text: "主页", link: "/" },
-    { text: "组件", link: "/components/home" },
-    { text: "导航", link: "/nav/" },
-    {
-      text: "个人文档",
-      link: "/note/",
-    },
-  ],
+  nav: navItems,
 
   sidebar: {
     "/note": [
