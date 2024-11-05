@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "@dyr/mobile"
-  text: "移动端组件库"
+  text: "Good things happen"
   image:
     src: /logo.png
     alt: "Gixy's Logo"
