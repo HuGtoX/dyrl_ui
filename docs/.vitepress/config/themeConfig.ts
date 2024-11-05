@@ -11,6 +11,10 @@ const extensionItems = [
 ];
 
 const themeConfig: DefaultTheme.Config = {
+  search: {
+    provider: "local",
+  },
+
   /* 右侧大纲配置 */
   outline: {
     level: "deep",
@@ -39,6 +43,7 @@ const themeConfig: DefaultTheme.Config = {
           { text: "HTML", link: "/note/frontEnd/html" },
           { text: "JavaScript", link: "/note/frontEnd/javascript" },
           { text: "面试题", link: "/note/frontEnd/interview" },
+          { text: "Router", link: "/note/frontEnd/router" },
         ],
       },
     ],
@@ -63,7 +68,7 @@ const themeConfig: DefaultTheme.Config = {
     ],
   },
 
-  socialLinks: [{ icon: "github", link: "https://github.com/vuejs/vitepress" }],
+  socialLinks: [{ icon: "github", link: "https://github.com/HuGtoX" }],
 };
 
 export default themeConfig;

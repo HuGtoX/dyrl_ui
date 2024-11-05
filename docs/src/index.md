@@ -31,6 +31,6 @@ features:
   - icon: 📚
     title: 其他文档
     details: 项目开发中常用配置等信息记录
-    link: /note/
+    link: /note/extension/extension.html
     linkText: 前往查看
 ---
