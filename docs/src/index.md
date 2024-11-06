@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "@dyr/mobile"
-  text: "移动端组件库"
+  text: "Good things happen"
   image:
     src: /logo.png
     alt: "Gixy's Logo"
@@ -31,6 +31,6 @@ features:
   - icon: 📚
     title: 其他文档
     details: 项目开发中常用配置等信息记录
-    link: /note/
+    link: /note/extension/extension.html
     linkText: 前往查看
 ---

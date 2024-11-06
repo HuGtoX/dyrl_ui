@@ -1,4 +1,4 @@
-import type { NavLink } from "../.vitepress/theme/types";
+import type { NavLink } from "../../.vitepress/theme/types";
 
 type NavData = {
   title: string;
@@ -55,6 +55,12 @@ export const NAV_DATA: NavData[] = [
         title: "Unplugin",
         desc: "unplugin-auto-import、unplugin-iconsunplugin-icons",
         link: "https://github.com/unplugin",
+      },
+      {
+        icon: "https://avatars.githubusercontent.com/u/79858588?s=200&v=4",
+        title: "react-grid-layout",
+        desc: "React实现拖拉拽的开源库",
+        link: "https://github.com/react-grid-layout",
       },
       {
         icon: "https://avatars.githubusercontent.com/u/13335464?s=200&v=4",

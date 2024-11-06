@@ -4,16 +4,18 @@ import {
   demoblockVitePlugin,
 } from "vitepress-theme-demoblock";
 import AutoImport from "unplugin-auto-import/vite";
-import themeConfig from "./themeConfig";
+import themeConfig from "./config/themeConfig";
 import path from "path";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "@dyrl/mobile",
-  description: "A Company UI Package",
+  title: "Gixy's Blog",
+  description: "组件库文档及个人笔记",
   lang: "zh-CN",
   base: "/dyrl_ui/",
+  srcDir: "src",
   lastUpdated: true,
+  head: [["link", { rel: "icon", href: "/dyrl_ui/logo.png" }]],
   vite: {
     css: {
       preprocessorOptions: {
@@ -30,7 +32,6 @@ export default defineConfig({
         include: [
           /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
           /\.vue$/,
-          /\.vue\?vue/, // .vue
         ],
         imports: ["vue"],
         dts: "typings/auto-imports.d.ts",

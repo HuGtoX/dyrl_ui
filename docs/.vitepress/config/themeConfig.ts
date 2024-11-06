@@ -4,6 +4,10 @@ import componentItems from "./component";
 import navItems from "./nav";
 
 const themeConfig: DefaultTheme.Config = {
+  search: {
+    provider: "local",
+  },
+
   /* 右侧大纲配置 */
   outline: {
     level: "deep",
