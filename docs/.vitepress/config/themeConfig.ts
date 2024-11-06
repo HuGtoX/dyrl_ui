@@ -20,7 +20,7 @@ const themeConfig: DefaultTheme.Config = {
     "/note": [
       {
         text: "拓展文档",
-        collapsed: false,
+        collapsed: true,
         items: extensionItems,
       },
       {

@@ -12,9 +12,11 @@
 import { ref, onMounted } from "vue";
 import axios from "axios";
 
-const dailySentenceApi = "/tenapi.cn/v2/yiyan";
-const dailyPicture = "/tenapi.cn/v2/bing";
-const dailyHistory = "/tenapi.cn/v2/history";
+const baseUrl = import.meta.env.DEV ? "/tenapi.cn" : "https://tenapi.cn";
+
+const dailySentenceApi = baseUrl + "/v2/yiyan";
+const dailyPicture = baseUrl + "/v2/bing";
+const dailyHistory = baseUrl + "/v2/history";
 
 const sentence = ref("");
 const picture = ref("");
