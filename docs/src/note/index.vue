@@ -22,13 +22,16 @@ const history = ref("");
 const today = ref("");
 
 onMounted(async () => {
+  // 随机一言
   sentence.value = await axios
     .post(dailySentenceApi, { format: "json" })
     .then((res) => res.data);
+  // 每日壁纸
   axios.post(dailyPicture).then((res) => {
     const { responseURL } = res.request;
     picture.value = responseURL;
   });
+  // 历史上的今天
   axios.post(dailyHistory).then((res) => {
     const { data } = res.data;
     history.value = data.list;
