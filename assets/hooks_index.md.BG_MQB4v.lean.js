@@ -1,1 +1,0 @@
-import{_ as e,c as t,o}from"./chunks/framework.HaEdmuUF.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"hooks/index.md","filePath":"hooks/index.md","lastUpdated":1730860559000}'),a={name:"hooks/index.md"};function s(n,r,d,c,i,p){return o(),t("div")}const f=e(a,[["render",s]]);export{m as __pageData,f as default};
