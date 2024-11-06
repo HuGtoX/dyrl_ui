@@ -1,7 +1,7 @@
 const extensionItems = [
-  { text: "VSCode配置", link: "/note/extension/vscode" },
+  { text: "VSCode", link: "/note/extension/vscode" },
   { text: "VitePress", link: "/note/extension/vitepress" },
-  { text: "WechatSDK", link: "/note/extension/wechat" },
+  { text: "Wechat", link: "/note/extension/wechat" },
   { text: "UniNFC", link: "/note/extension/nfcScan" },
   { text: "UnoCSS", link: "/note/extension/unoCSS" },
   { text: "Chokidar", link: "/note/extension/chokidar" },

@@ -17,6 +17,16 @@ export default defineConfig({
   lastUpdated: true,
   head: [["link", { rel: "icon", href: "/dyrl_ui/logo.png" }]],
   vite: {
+    server: {
+      port: 8080,
+      proxy: {
+        "/tenapi.cn": {
+          target: "https://tenapi.cn",
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/tenapi.cn/, ""),
+        },
+      },
+    },
     css: {
       preprocessorOptions: {
         scss: {
