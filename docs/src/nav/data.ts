@@ -63,6 +63,18 @@ export const NAV_DATA: NavData[] = [
         link: "https://github.com/react-grid-layout",
       },
       {
+        icon: "https://avatars.githubusercontent.com/u/8068250?s=200&v=4",
+        title: "Handsontable",
+        desc: "Handsontable is a popular JavaScript data grid component that brings the well-known look and feel of spreadsheets to your application.",
+        link: "https://github.com/handsontable/handsontable",
+      },
+      {
+        icon: "https://avatars.githubusercontent.com/u/8068250?s=200&v=4",
+        title: "Ace",
+        desc: "Ace (Ajax.org Cloud9 Editor)",
+        link: "https://github.com/ajaxorg/ace",
+      },
+      {
         icon: "https://avatars.githubusercontent.com/u/13335464?s=200&v=4",
         title: "Tampermonkey",
         desc: "油猴脚本",
@@ -247,13 +259,18 @@ export const NAV_DATA: NavData[] = [
     title: "JavaScript 框架类库",
     items: [
       {
+        icon: "https://es6.ruanyifeng.com/favicon.ico",
+        title: "ES6 入门教程",
+        desc: "阮一峰 《ECMAScript 6 入门教程》",
+        link: "https://es6.ruanyifeng.com/",
+      },
+      {
         icon: "https://svelte.dev/svelte-logo-horizontal.svg",
         title: "Svelte",
         desc: "将声明性组件转换为精准高效更新 DOM 的 JavaScript 代码",
         link: "https://svelte.dev",
       },
       {
-        // icon: 'https://simpleicons.org/icons/jquery.svg',
         icon: "/icons/jquery.svg",
         title: "jQuery API 中文文档",
         desc: "一个兼容多浏览器的 JavaScript 框架",

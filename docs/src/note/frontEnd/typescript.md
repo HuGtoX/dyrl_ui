@@ -1,5 +1,9 @@
 # TypeScript
 
+::: info
+[阮一峰 TypeScript 教程](https://typescript.p6p.net/typescript-tutorial/generics.html)
+:::
+
 ## 1. keyof
 
 - 用途：keyof 操作符用于获取一个对象类型的所有键的联合类型。
@@ -62,6 +66,81 @@ function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
    <code>return obj[key];</code>
    这行代码返回 obj 对象中 key 对应的值。由于 key 是 T 类型对象的键之一，因此 obj[key] 的类型是 T[K]。
 
+### 函数泛型写法
+
+function关键字定义的泛型函数
+
+```typescript
+function id<T>(arg: T): T {
+  return arg;
+}
+```
+
+变量形式定义的函数泛型
+
+```typescript
+let myId: <T>(arg: T) => T = id;
+```
+
+### 接口的泛型写法
+
+```typescript
+interface Box<T> {
+  contents: T;
+}
+
+let box: Box<string>;
+```
+
+### 类型别名的泛型写法
+
+type 命令定义的类型别名，也可以使用泛型。
+
+```typescript
+type Container<T> = { value: T };
+
+const a: Container<number> = { value: 0 };
+const b: Container<string> = { value: "b" };
+```
+
+定义树形结构的例子
+
+```typescript
+type Tree<T> = {
+  value: T;
+  left: Tree<T>;
+  right: Tree<T>;
+};
+```
+
+上面示例中，类型别名Tree内部递归引用了Tree自身。
+
+### 类型参数的默认值
+
+```typescript
+function getFirst<T = string>(arr: T[]): T {
+  return arr[0];
+}
+```
+
+上面示例中，T = string表示类型参数的默认值是string。调用getFirst()时，如果不给出T的值，TypeScript 就认为T等于string。
+
+但是，因为 TypeScript 会从实际参数推断出T的值，从而覆盖掉默认值，所以下面的代码不会报错。
+
+```typescript
+getFirst([1, 2, 3]); // 正确
+```
+
+### 泛型约束
+
+````typescript
+interface Lengthwise {
+  length: number;
+}
+
+function loggingIdentity<T extends Lengthwise>(arg: T): T {
+}
+
 ## 4. extends
 
 ::: info
@@ -70,7 +149,7 @@ function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
 
 在 TypeScript 中，extends 关键字主要用于泛型约束和继承。下面分别介绍这两种用法，并提供相应的示例。
 
-**1. 泛型约束**  
+**1. 泛型约束**
  在泛型中，extends 关键字用于限制泛型参数的类型，确保它满足某些条件。这可以提高类型安全性，使代码更加健壮。
 
 ```typescript
@@ -80,7 +159,17 @@ interface Ia {
 // T extends Ia  T继承了Ia，Ia拥有id属性，所以T必须拥有id属性
 // 所以调用该函数传递的参数必须包括id属性，从而实现了类型约束
 function logName<T extends Ia>(val: T) {}
+````
+
+在书写泛型的时候，我们往往需要对类型参数做一定的限制，比如希望传入的参数都有name属性的数组，我们可以这么写：
+
+```typescript
+function getCnames<T extends { name: string }>(entities: T[]): string[] {
+  return entities.map((entity) => entity.cname);
+}
 ```
+
+这里的extends对传入的参数做了一个限制，就是entities的没一项可以是一个对象，但是必须含有类型为string的cname属性。
 
 :::warning 注意
 需要理解的是，这里A extends B，是指类型A必须要包含类型B，而不是说类型A是类型B的子集。
@@ -130,7 +219,10 @@ type P<T> = T extends "x" ? string : number;
 type A3 = P<"x" | "y">; // A3的类型是 string | number
 ```
 
-该例中，extends的前参为T，T是一个泛型参数。在A3的定义中，给T传入的是'x'和'y'的联合类型'x' | 'y'，满足分配律，于是'x'和'y'被拆开，分别代入P(T) 然后将每一项代入得到的结果联合起来，得到string | number
+该例中，extends的前参为T，T是一个泛型参数。  
+在A3的定义中，给T传入的是'x'和'y'的联合类型'x' | 'y'  
+满足分配律，于是'x'和'y'被拆开，分别代入P(T) 然后将每一项代入得到的结果联合起来  
+得到string | number
 
 总之，满足两个要点即可适用分配律：第一，参数是泛型类型，第二，代入参数的是联合类型
 

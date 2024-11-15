@@ -2,13 +2,13 @@
 
 ::: info
 
-1. [Chrome 扩展开发](https://developer.chrome.com/docs/extensions/get-started?hl=zh-cn)
-2. [Edge 扩展开发](https://learn.microsoft.com/zh-cn/microsoft-edge/extensions-chromium/getting-started/part1-simple-extension?tabs=v3)
-3. [Chrome插件(扩展)开发全攻略](https://www.cnblogs.com/liuxianan/p/chrome-plugin-develop.html#%E9%95%BF%E8%BF%9E%E6%8E%A5%E5%92%8C%E7%9F%AD%E8%BF%9E%E6%8E%A5)
-4. [MDN-浏览器扩展](https://developer.mozilla.org/zh-CN/docs/Mozilla/Add-ons/WebExtensions/What_are_WebExtensions)
-5. [猫抓(cat catch)](https://github.com/xifangczy/cat-catch)
-6. [Content Security Policy](https://developer.mozilla.org/zh-CN/docs/Mozilla/Add-ons/WebExtensions/Content_Security_Policy)
-7. [Jquery Api 速查表](https://www.sunpop.cn/documentation/jq/index.html)
+[Chrome 扩展开发](https://developer.chrome.com/docs/extensions/get-started?hl=zh-cn)  
+[从零实现的Chrome扩展](https://blog.touchczy.top/#/Plugin/%E4%BB%8E%E9%9B%B6%E5%AE%9E%E7%8E%B0%E7%9A%84Chrome%E6%89%A9%E5%B1%95)  
+[Chrome插件(扩展)开发全攻略](https://www.cnblogs.com/liuxianan/p/chrome-plugin-develop.html#%E9%95%BF%E8%BF%9E%E6%8E%A5%E5%92%8C%E7%9F%AD%E8%BF%9E%E6%8E%A5)  
+[MDN-浏览器扩展](https://developer.mozilla.org/zh-CN/docs/Mozilla/Add-ons/WebExtensions/What_are_WebExtensions)  
+[猫抓(cat catch)](https://github.com/xifangczy/cat-catch)  
+[Content Security Policy](https://developer.mozilla.org/zh-CN/docs/Mozilla/Add-ons/WebExtensions/Content_Security_Policy)  
+[Jquery Api 速查表](https://www.sunpop.cn/documentation/jq/index.html)
 
 :::
 
