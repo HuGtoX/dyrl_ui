@@ -4,7 +4,7 @@
 [阮一峰 TypeScript 教程](https://typescript.p6p.net/typescript-tutorial/generics.html)
 :::
 
-## 1. keyof
+## keyof
 
 - 用途：keyof 操作符用于获取一个对象类型的所有键的联合类型。
 - 语法：keyof T
@@ -19,7 +19,7 @@ interface Person {
 type PersonKey = keyof Person; // "name" | "age"
 ```
 
-## 2. typeof
+## typeof
 
 - 用途: typeof 操作符用于获取一个值的类型。
 - 语法: typeof v
@@ -41,7 +41,7 @@ type AddParameters = Parameters<typeof add>; // [a: number, b: number]
 type AddReturnType = ReturnType<typeof add>; // number
 ```
 
-## 3. 泛型
+## 泛型
 
 泛型指的是在定义函数/接口/类型时，不预先指定具体的类型，而是在使用的时候在指定类型限制的一种特性。
 
@@ -133,15 +133,15 @@ getFirst([1, 2, 3]); // 正确
 
 ### 泛型约束
 
-````typescript
+```typescript
 interface Lengthwise {
   length: number;
 }
 
-function loggingIdentity<T extends Lengthwise>(arg: T): T {
-}
+function loggingIdentity<T extends Lengthwise>(arg: T): T {}
+```
 
-## 4. extends
+## extends
 
 ::: info
 [typescript-继承:extends](https://www.cnblogs.com/jiaxin2015/p/16712041.html)
@@ -150,7 +150,7 @@ function loggingIdentity<T extends Lengthwise>(arg: T): T {
 在 TypeScript 中，extends 关键字主要用于泛型约束和继承。下面分别介绍这两种用法，并提供相应的示例。
 
 **1. 泛型约束**
- 在泛型中，extends 关键字用于限制泛型参数的类型，确保它满足某些条件。这可以提高类型安全性，使代码更加健壮。
+在泛型中，extends 关键字用于限制泛型参数的类型，确保它满足某些条件。这可以提高类型安全性，使代码更加健壮。
 
 ```typescript
 interface Ia {
@@ -159,7 +159,7 @@ interface Ia {
 // T extends Ia  T继承了Ia，Ia拥有id属性，所以T必须拥有id属性
 // 所以调用该函数传递的参数必须包括id属性，从而实现了类型约束
 function logName<T extends Ia>(val: T) {}
-````
+```
 
 在书写泛型的时候，我们往往需要对类型参数做一定的限制，比如希望传入的参数都有name属性的数组，我们可以这么写：
 
@@ -230,7 +230,9 @@ type A3 = P<"x" | "y">; // A3的类型是 string | number
 extends在ts中是比较重要的基础类型，在后续出现的类型原理中都会借用到该类型来实现，建议认真阅读一下案例并理解其用法。
 :::
 
-## 5. Pick
+## 类型工具
+
+### Pick
 
 用于从已有的类型中选择一组属性，生成一个新的类型  
 示例：
@@ -260,7 +262,7 @@ type Pick<T, K extends keyof T> = {
 // P in K 表示循环 K 中的每个属性 P，并将其添加到新的类型中。
 ```
 
-## 6. Omit
+### Omit
 
 Omit则刚好与Pick相反，用于从已有的类型中排除一组属性，生成一个新的类型
 
@@ -284,7 +286,7 @@ interface User1 {
 type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 ```
 
-## 7. Exclude
+### Exclude
 
 Exclude<T,U>简单来说就是取T的差集，也就是T中不存在于U中的属性集合。
 
